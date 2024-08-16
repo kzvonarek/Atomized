@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9704bd113b1fc40b192f1bfc34579b60
+guid: 38875c760aeb545b8a0c07e4886e31d6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Hydrogen Molecule
+  - name: Oxygen Molecule
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 36
       height: 36
-    spriteID: 6aee65c6dcc6544ef8577547f3ee6ff9
+    spriteID: 40830a63cf6324be4b59c0eae0904fb2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,13 +144,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -667184946
-    name: Hydrogen Molecule
+    guid: -580009130
+    name: Oxygen Molecule
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Hydrogen Molecule
+    - name: Oxygen Molecule
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -158,7 +158,7 @@ ScriptedImporter:
         y: 0
         width: 36
         height: 36
-      spriteId: 6aee65c6dcc6544ef8577547f3ee6ff9
+      spriteId: 40830a63cf6324be4b59c0eae0904fb2
     linkedCells: []
     parentIndex: -1
   platformSettings: []
