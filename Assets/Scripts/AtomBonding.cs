@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AtomBonding : MonoBehaviour
 {
+    private Rigidbody2D rb;
     private float distanceToPlayer;
     [SerializeField] Transform playerPos;
     [SerializeField] GameObject playerObj;
@@ -15,9 +16,6 @@ public class AtomBonding : MonoBehaviour
 
     // true if player/atom is bonded, false is player is not bonded with atom
     public bool atomBonded;
-
-    // temporary
-    private Rigidbody2D rb;
 
     void Start()
     {
@@ -37,7 +35,6 @@ public class AtomBonding : MonoBehaviour
         // atom follows player hydrogen when bonded, temporarily stops following when too close
         else if (atomBonded && distanceToPlayer > minDistance)
         {
-            // rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             Vector2 direction = playerPos.position - transform.position;
@@ -46,7 +43,7 @@ public class AtomBonding : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
-        // break bond when N key is pressed and there is a current bond
+        // break bond when N key is pressed and there is a current bond, freeze pos. of atom(s)
         if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
