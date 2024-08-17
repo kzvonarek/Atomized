@@ -16,20 +16,40 @@ public class AtomBonding : MonoBehaviour
     // true if player/atom is bonded, false is player is not bonded with atom
     public bool atomBonded;
 
+    // temporary
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         // find distance to player from atom
         distanceToPlayer = Vector2.Distance(this.transform.position, playerPos.position);
 
-        // atom follows player hydrogen when bonded, temporarily stops following when too close
-        if (atomBonded && distanceToPlayer > minDistance)
+        if (atomBonded && distanceToPlayer < minDistance)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, playerPos.position, atomSpeed * Time.deltaTime);
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        // atom follows player hydrogen when bonded, temporarily stops following when too close
+        else if (atomBonded && distanceToPlayer > minDistance)
+        {
+            // rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            Vector2 direction = playerPos.position - transform.position;
+            Vector2 newPosition = rb.position + direction * atomSpeed * Time.deltaTime;
+
+            rb.MovePosition(newPosition);
         }
 
         // break bond when N key is pressed and there is a current bond
         if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
             atomBonded = false;
         }
     }

@@ -263,7 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e66a1e34c7d446ca82dcb567487f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonded: 0
 --- !u!58 &84794135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -684,6 +683,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526138538}
+  - component: {fileID: 526138541}
+  - component: {fileID: 526138540}
   - component: {fileID: 526138539}
   m_Layer: 0
   m_Name: Hydrogen Atom
@@ -723,7 +724,70 @@ MonoBehaviour:
   playerPos: {fileID: 84794132}
   playerObj: {fileID: 84794128}
   atomSpeed: 10
-  minDistance: 2
+  minDistance: 2.5
+  atomBonded: 0
+--- !u!58 &526138540
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526138537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 03068b1d1f13e4e24941acc6c59e33ff, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.6041148}
+  serializedVersion: 2
+  m_Radius: 2.1938903
+--- !u!50 &526138541
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526138537}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &593093400
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737396626}
+  - component: {fileID: 737396629}
   - component: {fileID: 737396628}
   - component: {fileID: 737396627}
   m_Layer: 0
@@ -953,8 +1018,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 84794132}
   playerObj: {fileID: 84794128}
-  atomSpeed: 10
+  atomSpeed: 7
   minDistance: 5
+  atomBonded: 0
 --- !u!58 &737396628
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -990,6 +1056,33 @@ CircleCollider2D:
   m_Offset: {x: -0.13411586, y: 1.8394666}
   serializedVersion: 2
   m_Radius: 8.360257
+--- !u!50 &737396629
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737396625}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &862595412
 GameObject:
   m_ObjectHideFlags: 0
