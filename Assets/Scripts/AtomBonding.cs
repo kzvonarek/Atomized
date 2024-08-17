@@ -54,8 +54,13 @@ public class AtomBonding : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             atomBonded = false;
 
+            // clear list of atoms (inventory)
             pBscript.currAtoms.Clear();
 
+            // default camera zoom back to 4.0
+            pBscript.mainCamera.m_Lens.OrthographicSize = 4f;
+
+            // deactivate the UI icons of elements
             pBscript.hydrogenIcon.SetActive(false);
             pBscript.heliumIcon.SetActive(false);
             pBscript.carbonIcon.SetActive(false);
