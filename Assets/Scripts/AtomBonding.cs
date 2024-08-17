@@ -1,36 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
 public class AtomBonding : MonoBehaviour
 {
-    public bool bonded = false;
     private float distanceToPlayer;
-    [SerializeField] Transform player;
+    [SerializeField] Transform playerPos;
+    [SerializeField] GameObject playerObj;
 
-    // change depending on size/type of atom
+    // change(s) depending on size/type of atom
     [SerializeField] float atomSpeed;
     [SerializeField] float minDistance;
 
+    // true if player/atom is bonded, false is player is not bonded with atom
+    public bool atomBonded;
 
     void Update()
     {
         // find distance to player from atom
-        distanceToPlayer = Vector2.Distance(this.transform.position, player.position);
+        distanceToPlayer = Vector2.Distance(this.transform.position, playerPos.position);
 
         // atom follows player hydrogen when bonded, temporarily stops following when too close
-        if (bonded && distanceToPlayer > minDistance)
+        if (atomBonded && distanceToPlayer > minDistance)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, player.position, atomSpeed * Time.deltaTime);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, playerPos.position, atomSpeed * Time.deltaTime);
         }
-    }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        // form bonds
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.B))
+        // break bond when N key is pressed and there is a current bond
+        if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
-            bonded = true;
+            atomBonded = false;
         }
     }
 }

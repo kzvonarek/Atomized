@@ -5,20 +5,13 @@ using UnityEngine;
 
 public class PlayerBonding : MonoBehaviour
 {
-    // get variable(s) from AtomBonding.cs
-    private AtomBonding aBscript;
-
-    void Start()
+    private void OnTriggerStay2D(Collider2D other)
     {
-        aBscript = GetComponent<AtomBonding>();
-    }
-
-    void Update()
-    {
-        // break bond(s)
-        if (Input.GetKeyDown(KeyCode.N) && aBscript.bonded)
+        // form bonds on contact with Atom and B key is pressed
+        if (other.gameObject.CompareTag("Atom") && Input.GetKeyDown(KeyCode.B))
         {
-            aBscript.bonded = false;
+            // let Atom game object know bonded occured
+            other.gameObject.GetComponent<AtomBonding>().atomBonded = true;
         }
     }
 }

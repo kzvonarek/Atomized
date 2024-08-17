@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e66a1e34c7d446ca82dcb567487f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonded: 0
 --- !u!58 &84794135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -683,9 +684,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526138538}
+  - component: {fileID: 526138539}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,81 +700,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526138537}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.48, y: 7.79, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.479999, y: 7.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 862595413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &583448811
-GameObject:
+--- !u!114 &526138539
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583448812}
-  - component: {fileID: 583448813}
-  m_Layer: 0
-  m_Name: Oyxgen Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &583448812
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583448811}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0060160654, y: -0.07353121, z: 0}
-  m_LocalScale: {x: 1.3775604, y: 1.3775604, z: 1.3775604}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1215989415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &583448813
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583448811}
+  m_GameObject: {fileID: 526138537}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00019984068, y: 0.19025095}
-  serializedVersion: 2
-  m_Radius: 0.46421096
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecfc83d866a248269a7f0610cc4e3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 84794132}
+  playerObj: {fileID: 84794128}
+  atomSpeed: 10
+  minDistance: 2
 --- !u!1 &593093400
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,9 +914,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737396626}
+  - component: {fileID: 737396628}
+  - component: {fileID: 737396627}
   m_Layer: 0
   m_Name: Oxygen Atom
-  m_TagString: Oxygen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -986,6 +939,57 @@ Transform:
   - {fileID: 1215989415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737396627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737396625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecfc83d866a248269a7f0610cc4e3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 84794132}
+  playerObj: {fileID: 84794128}
+  atomSpeed: 10
+  minDistance: 5
+--- !u!58 &737396628
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737396625}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13411586, y: 1.8394666}
+  serializedVersion: 2
+  m_Radius: 8.360257
 --- !u!1 &862595412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1397,6 @@ Transform:
   m_Children:
   - {fileID: 1751619938}
   - {fileID: 2075829904}
-  - {fileID: 583448812}
   m_Father: {fileID: 737396626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1215989419
@@ -1404,7 +1407,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215989412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a9f058899443b4a918ce98413125a4d6, type: 2}
   m_CullingMode: 0
@@ -1606,7 +1609,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 2
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 84794132}
@@ -1744,7 +1747,7 @@ GameObject:
   - component: {fileID: 1512350145}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
