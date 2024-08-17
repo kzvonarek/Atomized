@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     [SerializeField] float speed;
 
+    // fuel variable(s) (affected by FuelManager.cs)
+    public bool sufficientFuel;
+
     private Rigidbody2D rb;
     void Start()
     {
@@ -25,8 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // movement code
+        // movement code, allow vertical only when sufficient fuel (if player runs out of fuel, they will fall to nearest floor)
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // left or right
-        rb.velocity = new Vector2(rb.velocity.x, vertical * speed); // up or down
+
+        if (sufficientFuel)
+        {
+            rb.gravityScale = 0;
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed); // up or down
+        }
+        else
+        {
+            rb.gravityScale = 1;
+        }
     }
 }

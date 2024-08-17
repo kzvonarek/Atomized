@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerBonding : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class PlayerBonding : MonoBehaviour
     public GameObject carbonIcon;
     public GameObject nitrogenIcon;
     public GameObject oxygenIcon;
+
+    // fuel functionality
+    private FuelManager fuelBarScript;
+
+    void Start()
+    {
+        fuelBarScript = GameObject.FindWithTag("Fuel Manager").GetComponent<FuelManager>();
+    }
 
     void Update()
     {
@@ -60,6 +69,7 @@ public class PlayerBonding : MonoBehaviour
             currAtoms.Add(other.gameObject);
 
             // depending on element (name) of atom, activate an icon of it on UI and zoom out camera by written amount
+            // if helium, increase curr. fuel value
             // the bigger the atom, the larger the camera scales out
             switch (other.gameObject.name)
             {
@@ -70,6 +80,9 @@ public class PlayerBonding : MonoBehaviour
                 case "Helium Atom":
                     heliumIcon.SetActive(true);
                     mainCamera.m_Lens.OrthographicSize += 1f;
+
+                    // add fuel to fuel bar
+                    fuelBarScript.HeliumCollected();
                     break;
                 case "Carbon Atom":
                     carbonIcon.SetActive(true);

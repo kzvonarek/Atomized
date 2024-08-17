@@ -51,7 +51,7 @@ public class AtomBonding : MonoBehaviour
         // break bond when N key is pressed and there is a current bond, freeze position of atom(s)
         if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             atomBonded = false;
 
             // clear list of atoms (inventory)
