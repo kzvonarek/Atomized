@@ -39,7 +39,7 @@ public class PlayerBonding : MonoBehaviour
         }
     }
 
-    // if player exits range of atom, allow bonding
+    // if player enters range of atom, allow bonding
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Atom"))
@@ -82,7 +82,7 @@ public class PlayerBonding : MonoBehaviour
                     mainCamera.m_Lens.OrthographicSize += 1f;
 
                     // add fuel to fuel bar
-                    fuelBarScript.HeliumCollected();
+                    fuelBarScript.HeliumCollected(3f);
                     break;
                 case "Carbon Atom":
                     carbonIcon.SetActive(true);

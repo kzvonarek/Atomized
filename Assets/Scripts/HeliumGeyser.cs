@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class HeliumGeyser : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // fuel functionality
+    private bool isInGeyser = false;
+    private FuelManager fuelBarScript;
+
     void Start()
     {
-
+        fuelBarScript = GameObject.FindWithTag("Fuel Manager").GetComponent<FuelManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (isInGeyser)
+        {
+            fuelBarScript.HeliumCollected(0.0055f);
+        }
+    }
 
+    // if player enters range of geyser, allow refueling
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isInGeyser = true;
+        }
+    }
+
+    // if player exits range of geyser, do not allow for refueling
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isInGeyser = false;
+        }
     }
 }

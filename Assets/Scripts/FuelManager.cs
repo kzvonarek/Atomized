@@ -8,7 +8,7 @@ public class FuelManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] Slider fuelBar;
-    private float fuelHeIncrease = 3f;
+    private float fuelHeIncrease;
     private float fuelMovingDecrease = 0.5f;
     private float fuelIdleDecrease = 0.05f;
     private float fuelPoisioningRate = 0.5f;
@@ -21,10 +21,10 @@ public class FuelManager : MonoBehaviour
             fuelBar.value -= fuelMovingDecrease * Time.deltaTime;
         }
         // decrease fuel by set amount when UFO is idle
-        if (player.GetComponent<Rigidbody2D>().velocity.magnitude == 0f)
-        {
-            fuelBar.value -= fuelIdleDecrease * Time.deltaTime;
-        }
+        // if (player.GetComponent<Rigidbody2D>().velocity.magnitude == 0f)
+        // {
+        //     fuelBar.value -= fuelIdleDecrease * Time.deltaTime;
+        // }
 
         // when fuel value reaches 0, only allow horizontal movement
         if (fuelBar.value <= 0f)
@@ -37,7 +37,8 @@ public class FuelManager : MonoBehaviour
         }
     }
 
-    public void HeliumCollected()
+    // increase amount of curr. fuel
+    public void HeliumCollected(float fuelHeIncrease)
     {
         fuelBar.value += fuelHeIncrease;
     }
