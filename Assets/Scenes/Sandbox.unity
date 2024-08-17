@@ -1293,7 +1293,7 @@ Transform:
   m_GameObject: {fileID: 854566876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: -0.027, z: 0}
+  m_LocalPosition: {x: 0.001, y: -0.027, z: 1}
   m_LocalScale: {x: 1.0960602, y: 1.0960602, z: 1.0960602}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2926,7 +2926,7 @@ GameObject:
   - component: {fileID: 1793485901}
   m_Layer: 0
   m_Name: Carbon Atom
-  m_TagString: Untagged
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3225,7 +3225,7 @@ GameObject:
   - component: {fileID: 2145694798}
   m_Layer: 0
   m_Name: Nitrogen Atom
-  m_TagString: Untagged
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
