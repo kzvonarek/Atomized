@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerBonding : MonoBehaviour
 {
     [SerializeField] public List<GameObject> currAtoms = new List<GameObject>();
+
+    // add more if needed for levels with more than one of each element
     public GameObject hydrogenIcon;
     public GameObject heliumIcon;
     public GameObject carbonIcon;
@@ -24,29 +26,23 @@ public class PlayerBonding : MonoBehaviour
             currAtoms.Add(other.gameObject);
 
             // depending on element of atom, activate an icon of it on UI
-            if (other.gameObject.name == "Hydrogen Atom")
+            switch (other.gameObject.name)
             {
-                hydrogenIcon.SetActive(true);
-            }
-
-            else if (other.gameObject.name == "Helium Atom")
-            {
-                heliumIcon.SetActive(true);
-            }
-
-            else if (other.gameObject.name == "Carbon Atom")
-            {
-                carbonIcon.SetActive(true);
-            }
-
-            else if (other.gameObject.name == "Nitrogen Atom")
-            {
-                nitrogenIcon.SetActive(true);
-            }
-
-            else if (other.gameObject.name == "Oxygen Atom")
-            {
-                oxygenIcon.SetActive(true);
+                case "Hydrogen Atom":
+                    hydrogenIcon.SetActive(true);
+                    break;
+                case "Helium Atom":
+                    heliumIcon.SetActive(true);
+                    break;
+                case "Carbon Atom":
+                    carbonIcon.SetActive(true);
+                    break;
+                case "Nitrogen Atom":
+                    nitrogenIcon.SetActive(true);
+                    break;
+                case "Oxygen Atom":
+                    oxygenIcon.SetActive(true);
+                    break;
             }
         }
     }
