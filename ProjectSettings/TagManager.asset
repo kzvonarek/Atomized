@@ -7,6 +7,9 @@ TagManager:
   - Oxygen
   - Hydrogen
   - Atom
+  - Carbon
+  - Helium
+  - Nitrogen
   layers:
   - Default
   - TransparentFX

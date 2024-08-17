@@ -10,6 +10,9 @@ public class AtomBonding : MonoBehaviour
     [SerializeField] Transform playerPos;
     [SerializeField] GameObject playerObj;
 
+    // script from PlayerBonding.cs
+    private PlayerBonding pBscript;
+
     // change(s) depending on size/type of atom
     [SerializeField] float atomSpeed;
     [SerializeField] float minDistance;
@@ -20,6 +23,7 @@ public class AtomBonding : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pBscript = playerObj.GetComponent<PlayerBonding>();
     }
 
     void Update()
@@ -27,12 +31,13 @@ public class AtomBonding : MonoBehaviour
         // find distance to player from atom
         distanceToPlayer = Vector2.Distance(this.transform.position, playerPos.position);
 
+        // temporarily stops following when too close
         if (atomBonded && distanceToPlayer < minDistance)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
-        // atom follows player hydrogen when bonded, temporarily stops following when too close
+        // atom follows player hydrogen when bonded
         else if (atomBonded && distanceToPlayer > minDistance)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -43,11 +48,19 @@ public class AtomBonding : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
-        // break bond when N key is pressed and there is a current bond, freeze pos. of atom(s)
+        // break bond when N key is pressed and there is a current bond, freeze position of atom(s)
         if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             atomBonded = false;
+
+            pBscript.currAtoms.Clear();
+
+            pBscript.hydrogenIcon.SetActive(false);
+            pBscript.heliumIcon.SetActive(false);
+            pBscript.carbonIcon.SetActive(false);
+            pBscript.nitrogenIcon.SetActive(false);
+            pBscript.oxygenIcon.SetActive(false);
         }
     }
 }
