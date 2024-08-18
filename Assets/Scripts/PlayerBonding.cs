@@ -103,6 +103,12 @@ public class PlayerBonding : MonoBehaviour
                     GetComponent<PlayerMovement>().speed -= 0.5f;
                     break;
             }
+
+            // prevent speed from being 0 or less (game is unplayable)
+            if (GetComponent<PlayerMovement>().speed < 0.1f)
+            {
+                GetComponent<PlayerMovement>().speed = 0.1f;
+            }
         }
     }
 }
