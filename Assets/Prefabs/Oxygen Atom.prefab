@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5972261658517346936}
   - component: {fileID: 4553777854169545406}
   - component: {fileID: 580101368071781181}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Oxygen Atom
   m_TagString: Atom
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374889870924497624}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.71, y: -3.9, z: 0.0123806875}
   m_LocalScale: {x: 0.63248944, y: 0.63248944, z: 0.63248944}
   m_ConstrainProportionsScale: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1866315020523331532}
   - component: {fileID: 3244009735161003463}
   - component: {fileID: 161727022955988202}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Oyxgen Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2E_ElectronRing
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 2538fa219d02f47ca96e662083fceb6e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 2538fa219d02f47ca96e662083fceb6e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7869315
@@ -355,6 +359,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 54a6dd3d08ecc412fab819de8c5e6cb2, type: 3}
       propertyPath: m_Name
       value: 6E_ElectronRing
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 54a6dd3d08ecc412fab819de8c5e6cb2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 54a6dd3d08ecc412fab819de8c5e6cb2, type: 3}
       propertyPath: m_LocalScale.x

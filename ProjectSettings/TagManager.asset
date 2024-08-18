@@ -4,12 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Oxygen
-  - Hydrogen
   - Atom
-  - Carbon
-  - Helium
-  - Nitrogen
   - Fuel Manager
   layers:
   - Default
@@ -18,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Atom
+  - Exit
   - 
   - 
   - 

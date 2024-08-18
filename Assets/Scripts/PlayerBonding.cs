@@ -70,16 +70,19 @@ public class PlayerBonding : MonoBehaviour
 
             // depending on element (name) of atom, activate an icon of it on UI and zoom out camera by written amount
             // if helium, increase curr. fuel value
-            // the bigger the atom, the larger the camera scales out
+            // decrease speed when picking up atom
+            // the bigger the atom, the larger the camera scales out and the more speed is decreased
             switch (other.gameObject.name)
             {
                 case "Hydrogen Atom":
-                    hydrogenIcon.SetActive(true);
-                    mainCamera.m_Lens.OrthographicSize += 2f;
+                    hydrogenIcon.SetActive(true); // display icon in UI
+                    mainCamera.m_Lens.OrthographicSize += 2f; // increase camera FOV
+                    GetComponent<PlayerMovement>().speed -= 0.3f; // decrease speed
                     break;
                 case "Helium Atom":
                     heliumIcon.SetActive(true);
                     mainCamera.m_Lens.OrthographicSize += 1f;
+                    GetComponent<PlayerMovement>().speed -= 0.1f;
 
                     // add fuel to fuel bar
                     fuelBarScript.HeliumCollected(3f);
@@ -87,14 +90,16 @@ public class PlayerBonding : MonoBehaviour
                 case "Carbon Atom":
                     carbonIcon.SetActive(true);
                     mainCamera.m_Lens.OrthographicSize += 5f;
+                    GetComponent<PlayerMovement>().speed -= 1f;
                     break;
                 case "Nitrogen Atom":
                     nitrogenIcon.SetActive(true);
                     mainCamera.m_Lens.OrthographicSize += 4f;
+                    GetComponent<PlayerMovement>().speed -= 0.7f;
                     break;
                 case "Oxygen Atom":
                     oxygenIcon.SetActive(true);
-                    mainCamera.m_Lens.OrthographicSize += 3f;
+                    GetComponent<PlayerMovement>().speed -= 0.5f;
                     break;
             }
         }

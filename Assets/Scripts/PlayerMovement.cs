@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // movement values
     private float horizontal;
     private float vertical;
-    [SerializeField] float speed;
+    public float speed;
 
     // fuel variable(s) (affected by FuelManager.cs)
     public bool sufficientFuel;

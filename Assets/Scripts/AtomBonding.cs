@@ -69,6 +69,9 @@ public class AtomBonding : MonoBehaviour
             pBscript.carbonIcon.SetActive(false);
             pBscript.nitrogenIcon.SetActive(false);
             pBscript.oxygenIcon.SetActive(false);
+
+            // set player speed back to default (8f)
+            playerObj.GetComponent<PlayerMovement>().speed = 8f;
         }
     }
 }
