@@ -86,7 +86,7 @@ public class PlayerBonding : MonoBehaviour
                     GetComponent<PlayerMovement>().speed -= 0.1f;
 
                     // add fuel to fuel bar
-                    fuelBarScript.HeliumCollected(3f);
+                    fuelBarScript.HeliumCollected(1f);
                     break;
                 case "Carbon Atom":
                     carbonIcon.SetActive(true);
