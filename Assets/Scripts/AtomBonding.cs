@@ -51,7 +51,7 @@ public class AtomBonding : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
-        // break bond when N key is pressed and there is a current bond, freeze position of atom(s)
+        // break all bonds when N key is pressed and there is a current bond, freeze position of atom(s)
         if (Input.GetKeyDown(KeyCode.N) && atomBonded)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -70,7 +70,7 @@ public class AtomBonding : MonoBehaviour
             pBscript.nitrogenIcon.SetActive(false);
             pBscript.oxygenIcon.SetActive(false);
 
-            // set player speed back to default (8f)
+            // set player speed back to default (12f)
             playerObj.GetComponent<PlayerMovement>().speed = 12f;
         }
     }

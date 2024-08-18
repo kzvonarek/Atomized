@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Cinemachine;
-using UnityEngine.UI;
 
 public class PlayerBonding : MonoBehaviour
 {
@@ -18,14 +17,6 @@ public class PlayerBonding : MonoBehaviour
     public GameObject carbonIcon;
     public GameObject nitrogenIcon;
     public GameObject oxygenIcon;
-
-    // fuel functionality
-    private FuelManager fuelBarScript;
-
-    void Start()
-    {
-        fuelBarScript = GameObject.FindWithTag("Fuel Manager").GetComponent<FuelManager>();
-    }
 
     void Update()
     {
@@ -62,45 +53,40 @@ public class PlayerBonding : MonoBehaviour
     {
         if (canBond && other.gameObject.GetComponent<AtomBonding>().atomBonded == false)
         {
-            // let atom game object know bonded occured
+            // let atom game object know that a bond occured
             other.gameObject.GetComponent<AtomBonding>().atomBonded = true;
 
-            // add collected atom to List of held atom(s)
+            // add collected atom to a list of held atom(s)
             currAtoms.Add(other.gameObject);
 
-            // depending on element (name) of atom, activate an icon of it on UI
-            // zoom out camera when picking up an atom
-            // decrease speed when picking up atom
-            // the bigger the atom, the larger the camera scales out and the more speed is decreased
-            // for helium, increase current fuel value
+            /*
+            - depending on element (name) of atom, activate an icon of it on UI
+            - zoom out camera when picking up an atom
+            - decrease speed when picking up atom
+            - the bigger the atom, the larger the camera scales out and the more speed is decreased
+            - for helium, increase current fuel value
+            */
             switch (other.gameObject.name)
             {
                 case "Hydrogen Atom":
                     hydrogenIcon.SetActive(true); // display icon in UI
-                    mainCamera.m_Lens.OrthographicSize += 2f; // increase camera FOV
-                    GetComponent<PlayerMovement>().speed -= 0.3f; // decrease speed
+                    bondFunction(2f, 0.3f);
                     break;
                 case "Helium Atom":
                     heliumIcon.SetActive(true);
-                    mainCamera.m_Lens.OrthographicSize += 1f;
-                    GetComponent<PlayerMovement>().speed -= 0.1f;
-
-                    // add fuel to fuel bar
-                    fuelBarScript.HeliumCollected(1f);
+                    bondFunction(1f, 0.1f);
                     break;
                 case "Carbon Atom":
                     carbonIcon.SetActive(true);
-                    mainCamera.m_Lens.OrthographicSize += 5f;
-                    GetComponent<PlayerMovement>().speed -= 1f;
+                    bondFunction(5f, 1f);
                     break;
                 case "Nitrogen Atom":
                     nitrogenIcon.SetActive(true);
-                    mainCamera.m_Lens.OrthographicSize += 4f;
-                    GetComponent<PlayerMovement>().speed -= 0.7f;
+                    bondFunction(4f, 0.7f);
                     break;
                 case "Oxygen Atom":
                     oxygenIcon.SetActive(true);
-                    GetComponent<PlayerMovement>().speed -= 0.5f;
+                    bondFunction(3f, 0.5f);
                     break;
             }
 
@@ -110,5 +96,11 @@ public class PlayerBonding : MonoBehaviour
                 GetComponent<PlayerMovement>().speed = 0.1f;
             }
         }
+    }
+
+    void bondFunction(float fovIncrease, float speedDecrease)
+    {
+        mainCamera.m_Lens.OrthographicSize += fovIncrease; // increase camera FOV
+        GetComponent<PlayerMovement>().speed -= speedDecrease; // decrease speed
     }
 }
