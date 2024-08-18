@@ -7,8 +7,8 @@ public class AtomBonding : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float distanceToPlayer;
-    [SerializeField] Transform playerPos;
-    [SerializeField] GameObject playerObj;
+    private Transform playerPos;
+    private GameObject playerObj;
 
     // script from PlayerBonding.cs
     private PlayerBonding pBscript;
@@ -23,6 +23,9 @@ public class AtomBonding : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerPos = playerObj.transform;
         pBscript = playerObj.GetComponent<PlayerBonding>();
     }
 
