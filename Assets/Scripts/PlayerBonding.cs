@@ -68,10 +68,11 @@ public class PlayerBonding : MonoBehaviour
             // add collected atom to List of held atom(s)
             currAtoms.Add(other.gameObject);
 
-            // depending on element (name) of atom, activate an icon of it on UI and zoom out camera by written amount
-            // if helium, increase curr. fuel value
+            // depending on element (name) of atom, activate an icon of it on UI
+            // zoom out camera when picking up an atom
             // decrease speed when picking up atom
             // the bigger the atom, the larger the camera scales out and the more speed is decreased
+            // for helium, increase current fuel value
             switch (other.gameObject.name)
             {
                 case "Hydrogen Atom":
