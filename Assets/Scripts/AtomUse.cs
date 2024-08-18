@@ -7,8 +7,12 @@ public class AtomUse : MonoBehaviour
 {
     // helium functionality
     private FuelManager fuelBarScript;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject playerObj;
     private List<GameObject> playerAtomList;
+
+    // script from PlayerBonding.cs
+    private PlayerBonding pBscript;
+
 
     void Start()
     {
@@ -16,7 +20,9 @@ public class AtomUse : MonoBehaviour
         fuelBarScript = GameObject.FindWithTag("Fuel Manager").GetComponent<FuelManager>();
 
         // get atom List (currAtoms) from player
-        playerAtomList = player.GetComponent<PlayerBonding>().currAtoms;
+        playerAtomList = playerObj.GetComponent<PlayerBonding>().currAtoms;
+
+        pBscript = playerObj.GetComponent<PlayerBonding>();
     }
 
     // destroy helium atom, and increase fuel by set amount
@@ -34,6 +40,13 @@ public class AtomUse : MonoBehaviour
             Destroy(heliumAtom);
         }
 
-        // hide helium icon (ADD THIS)
+        // check if there is still more helium atoms in list then...
+        heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
+
+        // ...hide helium atom icon when none are left
+        if (heliumAtom == null)
+        {
+            pBscript.heliumIcon.SetActive(false);
+        }
     }
 }

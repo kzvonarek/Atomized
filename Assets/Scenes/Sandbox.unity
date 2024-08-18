@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85e9ba42ee694d36aebd3c7be193975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1454688725}
+  playerObj: {fileID: 1454688725}
 --- !u!4 &287323372
 Transform:
   m_ObjectHideFlags: 0
@@ -2880,6 +2880,63 @@ Transform:
   - {fileID: 436525700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1747395775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568629760726117695, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255883929006521042, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
+      propertyPath: m_Name
+      value: Helium Atom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
 --- !u!1 &1840552190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3637,7 @@ SceneRoots:
   - {fileID: 1649754228}
   - {fileID: 2789246246624003572}
   - {fileID: 157146070891907226}
+  - {fileID: 1747395775}
   - {fileID: 7993835946418592303}
   - {fileID: 1163765753314675788}
   - {fileID: 458064177386740526}
