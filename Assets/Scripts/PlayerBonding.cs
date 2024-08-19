@@ -11,11 +11,12 @@ public class PlayerBonding : MonoBehaviour
     public List<GameObject> currAtoms = new List<GameObject>();
     public CinemachineVirtualCamera mainCamera;
 
-    // add more if needed for levels with more than one of each element
+    // add more if needed for levels with more than one of each element (move to different script?)
     public GameObject hydrogenIcon;
     public GameObject heliumIcon;
     public GameObject carbonIcon;
     public GameObject nitrogenIcon;
+    public GameObject h2oIcon;
     public GameObject oTwoIcon;
 
     // keep count of number of specific atoms

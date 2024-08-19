@@ -10,6 +10,10 @@ public class AtomUse : MonoBehaviour
     [SerializeField] GameObject playerObj;
     private List<GameObject> playerAtomList;
 
+    // H2O (water) platform functionality
+    [SerializeField] GameObject h2oPlatform;
+    [SerializeField] GameObject h2oPlatformPoint;
+
     // script(s) from Player
     private PlayerBonding pBscript;
     private PlayerMovement pMscript;
@@ -93,5 +97,12 @@ public class AtomUse : MonoBehaviour
             playerAtomList.Remove(oxygenAtom);
             Destroy(oxygenAtom);
         }
+    }
+
+    // H2O (water) platform creation
+    public void h2oButtonClicked()
+    {
+        // spawn in water platform at platform spawn point
+        Instantiate(h2oPlatform, h2oPlatformPoint.transform.position, Quaternion.identity);
     }
 }

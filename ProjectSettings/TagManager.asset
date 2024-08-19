@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Atom
   - Fuel Manager
+  - H2O
   layers:
   - Default
   - TransparentFX
