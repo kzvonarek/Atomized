@@ -36,6 +36,11 @@ public class AtomUse : MonoBehaviour
 
     void Update()
     {
+        // hide helium atom icon when there are less than one helium atom present
+        if (pBscript.totalHelium < 1)
+        {
+            pBscript.heliumIcon.SetActive(false);
+        }
         // hide O2 compound icon when there are less than two oxygen atoms present
         if (pBscript.totalOxygen < 2)
         {
@@ -47,6 +52,12 @@ public class AtomUse : MonoBehaviour
         {
             pBscript.h2oIcon.SetActive(false);
         }
+
+        // hide CH4 compound icon when there are less than 1 carbon/4 hydrogen atoms present
+        if (pBscript.totalCarbon < 1 || pBscript.totalHydrogen < 4)
+        {
+            pBscript.cHFourIcon.SetActive(false);
+        }
     }
 
     // destroy helium atom/icon, and increase fuel by set amount
@@ -57,15 +68,6 @@ public class AtomUse : MonoBehaviour
 
         destroyHeliumAtom();
         pBscript.totalHelium -= 1; // lower helium count
-
-        // check if there is still more helium atom(s) in list then...
-        GameObject heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
-
-        // ...hide helium atom icon when none are left
-        if (heliumAtom == null)
-        {
-            pBscript.heliumIcon.SetActive(false);
-        }
     }
 
     void destroyHeliumAtom()
@@ -136,6 +138,32 @@ public class AtomUse : MonoBehaviour
         {
             playerAtomList.Remove(hydrogenAtom);
             Destroy(hydrogenAtom);
+        }
+    }
+
+    public void cH4ButtonClicked()
+    {
+        // explode player away, and break all bonds
+        Debug.Log("EXPLODE");
+
+        // find 1 carbon atom, and 4 hyrdogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
+        destroyCarbonAtom();
+        destroyHydrogenAtom();
+        destroyHydrogenAtom();
+        destroyHydrogenAtom();
+        destroyHydrogenAtom();
+        pBscript.totalCarbon -= 1; // decrease count of total held oxygen atoms
+        pBscript.totalHydrogen -= 4; // decrease count of total held hydrogen atoms
+    }
+
+    void destroyCarbonAtom()
+    {
+        GameObject carbonAtom = playerAtomList.Find(atom => atom.name == "Carbon Atom");
+
+        if (carbonAtom != null)
+        {
+            playerAtomList.Remove(carbonAtom);
+            Destroy(carbonAtom);
         }
     }
 }

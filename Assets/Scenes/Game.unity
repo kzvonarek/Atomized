@@ -3198,6 +3198,7 @@ MonoBehaviour:
   heliumIcon: {fileID: 1503028941}
   h2oIcon: {fileID: 63384483}
   oTwoIcon: {fileID: 763758423}
+  cHFourIcon: {fileID: 0}
   totalOxygen: 0
   totalHydrogen: 0
   totalHelium: 0
@@ -4362,7 +4363,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 287323371}
         m_TargetAssemblyTypeName: AtomUse, Assembly-CSharp
-        m_MethodName: HeliumButtonClicked
+        m_MethodName: cH4ButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
