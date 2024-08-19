@@ -146,8 +146,7 @@ public class AtomUse : MonoBehaviour
     public void cH4ButtonClicked()
     {
         // explode player away, and break all bonds
-        playerObj.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * explodeForce, ForceMode2D.Impulse);
-        Debug.Log("EXPLODE");
+        playerObj.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * explodeForce);
 
         // find 1 carbon atom, and 4 hyrdogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyCarbonAtom();
