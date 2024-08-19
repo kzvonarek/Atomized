@@ -16,7 +16,10 @@ public class PlayerBonding : MonoBehaviour
     public GameObject heliumIcon;
     public GameObject carbonIcon;
     public GameObject nitrogenIcon;
-    public GameObject oxygenIcon;
+    public GameObject oTwoIcon;
+
+    // keep count of number of specific atoms
+    public int totalOxygen;
 
     void Update()
     {
@@ -27,6 +30,12 @@ public class PlayerBonding : MonoBehaviour
             {
                 canBond = true;
             }
+        }
+
+        // check if player has TWO or more oxygen atoms, if so set O2 icon to visible
+        if (totalOxygen >= 2)
+        {
+            oTwoIcon.SetActive(true);
         }
     }
 
@@ -60,7 +69,7 @@ public class PlayerBonding : MonoBehaviour
             currAtoms.Add(other.gameObject);
 
             /*
-            - depending on element (name) of atom, activate an icon of it on UI
+            - depending on element (name) of atom, [temp] activate an icon of it on UI (different for specific atoms)
             - zoom out camera when picking up an atom
             - decrease speed when picking up atom
             - the bigger the atom, the larger the camera scales out and the more speed is decreased
@@ -85,7 +94,7 @@ public class PlayerBonding : MonoBehaviour
                     bondFunction(4f, 0.7f);
                     break;
                 case "Oxygen Atom":
-                    oxygenIcon.SetActive(true);
+                    totalOxygen += 1;
                     bondFunction(3f, 0.5f);
                     break;
             }
