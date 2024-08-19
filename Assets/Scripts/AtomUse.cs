@@ -53,7 +53,7 @@ public class AtomUse : MonoBehaviour
     public void HeliumButtonClicked()
     {
         // add fuel to fuel bar
-        fuelBarScript.HeliumCollected(1f);
+        fuelBarScript.HeliumCollected(0.5f); // test for optimal/fair fuel increase
 
         // find a helium atom in List/collected atoms and destroy it/remove from List (currAtoms)
         GameObject heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
