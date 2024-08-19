@@ -58,6 +58,21 @@ public class WaterBear : MonoBehaviour
                     pBscript.totalHydrogen -= 1;
                 }
 
+                if (other.gameObject.name == "Helium Atom")
+                {
+                    pBscript.totalHelium -= 1;
+                }
+
+                if (other.gameObject.name == "Carbon Atom")
+                {
+                    pBscript.totalCarbon -= 1;
+                }
+
+                if (other.gameObject.name == "Nitrogen Atom")
+                {
+                    pBscript.totalNitrogen -= 1;
+                }
+
                 if (other.gameObject.name == "Oxygen Atom")
                 {
                     pBscript.totalOxygen -= 1;
