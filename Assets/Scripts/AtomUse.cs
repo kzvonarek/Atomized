@@ -61,7 +61,7 @@ public class AtomUse : MonoBehaviour
             pBscript.cHFourIcon.SetActive(false);
         }
 
-        // hide nitrogen atom icon when there are less than 1 nitrogen atoms present
+        // hide nitrogen atom icon when there are less than 1 nitrogen atom present
         if (pBscript.totalNitrogen < 1)
         {
             pBscript.nitrogenIcon.SetActive(false);
@@ -180,7 +180,7 @@ public class AtomUse : MonoBehaviour
         // create protective shield, prevents one hit from Waterbear
         Debug.Log("SHIELD");
 
-        // find 1 hydrogen atom in List/collected atoms and destroy them/remove from List (currAtoms)
+        // find 1 nitrogen atom in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyNitrogenAtom();
         pBscript.totalNitrogen -= 1; // decrease count of total held nitrogen atoms
     }
