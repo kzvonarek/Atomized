@@ -7,6 +7,7 @@ public class GameManagement : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     private float timeElapsed;
+    private bool paused;
 
     void Update()
     {
@@ -18,6 +19,17 @@ public class GameManagement : MonoBehaviour
         int milliseconds = Mathf.FloorToInt(timeElapsed * 100 % 100);
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, minutes, seconds, milliseconds);
 
-        // score?
+        // pause game when player presses escape
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        {
+            paused = true;
+            Time.timeScale = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true) // unpause game
+        {
+            paused = false;
+            Time.timeScale = 1;
+        }
+        // make it open up screen, that allows player to see Chemist Book, controls, and go to menu/resume
     }
 }
