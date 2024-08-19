@@ -34,6 +34,21 @@ public class AtomUse : MonoBehaviour
         pMscript = playerObj.GetComponent<PlayerMovement>();
     }
 
+    void Update()
+    {
+        // hide O2 compound icon when there are less than two oxygen atoms present
+        if (pBscript.totalOxygen < 2)
+        {
+            pBscript.oTwoIcon.SetActive(false);
+        }
+
+        // hide H2O compound icon when there are less than 1 oxygen/2 hydrogen atoms present
+        if (pBscript.totalOxygen < 1 || pBscript.totalHydrogen < 2)
+        {
+            pBscript.h2oIcon.SetActive(false);
+        }
+    }
+
     // destroy helium atom/icon, and increase fuel by set amount
     public void HeliumButtonClicked()
     {
@@ -66,12 +81,6 @@ public class AtomUse : MonoBehaviour
         destroyOxygenAtom();
         destroyOxygenAtom();
         pBscript.totalOxygen -= 2; // decrease count of total held oxygen atoms
-
-        // hide O2 compound icon when there are less than two oxygen atoms present
-        if (pBscript.totalOxygen < 2)
-        {
-            pBscript.oTwoIcon.SetActive(false);
-        }
 
         // increase speed by 5f for 5 seconds
         pMscript.speed += 5f;
@@ -111,12 +120,6 @@ public class AtomUse : MonoBehaviour
         destroyHydrogenAtom();
         pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
         pBscript.totalHydrogen -= 2; // decrease count of total held hydrogen atoms
-
-        // hide H2O compound icon when there are less than 1 oxygen/2 hydrogen atoms present
-        if (pBscript.totalOxygen < 1 && pBscript.totalHydrogen < 2)
-        {
-            pBscript.h2oIcon.SetActive(false);
-        }
     }
 
     void destroyHydrogenAtom()
