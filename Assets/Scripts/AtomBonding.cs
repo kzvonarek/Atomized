@@ -64,11 +64,12 @@ public class AtomBonding : MonoBehaviour
             pBscript.mainCamera.m_Lens.OrthographicSize = 4f;
 
             // deactivate the UI icons of elements
-            pBscript.hydrogenIcon.SetActive(false);
+            //pBscript.hydrogenIcon.SetActive(false);
             pBscript.heliumIcon.SetActive(false);
-            pBscript.carbonIcon.SetActive(false);
-            pBscript.nitrogenIcon.SetActive(false);
+            // pBscript.carbonIcon.SetActive(false);
+            // pBscript.nitrogenIcon.SetActive(false);
             pBscript.oTwoIcon.SetActive(false);
+            pBscript.h2oIcon.SetActive(false);
 
             // set player speed back to default (12f)
             playerObj.GetComponent<PlayerMovement>().speed = 12f;
