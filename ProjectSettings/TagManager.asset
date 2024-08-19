@@ -7,6 +7,7 @@ TagManager:
   - Atom
   - Fuel Manager
   - H2O
+  - Waterbear
   layers:
   - Default
   - TransparentFX

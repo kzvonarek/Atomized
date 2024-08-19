@@ -13,8 +13,8 @@ public class FuelManager : MonoBehaviour
 
     void Update()
     {
-        // decrease fuel by set amount when UFO is moving
-        if (player.GetComponent<Rigidbody2D>().velocity.magnitude > 0f)
+        // decrease fuel by set amount when UFO is moving (while player is inputting)
+        if (player.GetComponent<Rigidbody2D>().velocity.magnitude > 0f && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             fuelBar.value -= fuelMovingDecrease * Time.deltaTime;
         }
