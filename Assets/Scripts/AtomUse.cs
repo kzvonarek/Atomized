@@ -61,10 +61,10 @@ public class AtomUse : MonoBehaviour
             pBscript.cHFourIcon.SetActive(false);
         }
 
-        // hide NO atom icon when there are less than 1 nitrogen/1 oxygen atoms present
+        // hide NO compound icon when there are less than 1 nitrogen/1 oxygen atoms present
         if (pBscript.totalNitrogen < 1 || pBscript.totalOxygen <= 1)
         {
-            pBscript.nitrogenIcon.SetActive(false);
+            pBscript.NoIcon.SetActive(false);
         }
     }
 
