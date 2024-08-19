@@ -21,6 +21,7 @@ public class PlayerBonding : MonoBehaviour
 
     // keep count of number of specific atoms
     public int totalOxygen = 0;
+    public int totalHydrogen = 0;
 
     void Update()
     {
@@ -37,6 +38,11 @@ public class PlayerBonding : MonoBehaviour
         if (totalOxygen >= 2)
         {
             oTwoIcon.SetActive(true);
+        }
+
+        if (totalOxygen >= 1 && totalHydrogen >= 2)
+        {
+            h2oIcon.SetActive(true);
         }
     }
 
@@ -69,7 +75,7 @@ public class PlayerBonding : MonoBehaviour
             // add collected atom to a list of held atom(s)
             currAtoms.Add(other.gameObject);
 
-            /*
+            /* update these comments near end
             - depending on element (name) of atom, [temp] activate an icon of it on UI (different for specific atoms)
             - zoom out camera when picking up an atom
             - decrease speed when picking up atom
@@ -79,11 +85,11 @@ public class PlayerBonding : MonoBehaviour
             switch (other.gameObject.name)
             {
                 case "Hydrogen Atom":
-                    hydrogenIcon.SetActive(true); // display icon in UI
+                    totalHydrogen += 1;
                     bondFunction(2f, 0.3f);
                     break;
                 case "Helium Atom":
-                    heliumIcon.SetActive(true);
+                    heliumIcon.SetActive(true); // display icon in UI
                     bondFunction(1f, 0.1f);
                     break;
                 case "Carbon Atom":

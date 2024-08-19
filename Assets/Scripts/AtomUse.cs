@@ -67,7 +67,7 @@ public class AtomUse : MonoBehaviour
         destroyOxygenAtom();
         pBscript.totalOxygen -= 2; // decrease count of total held oxygen atoms
 
-        // hide O2 atom icon when there are less than two oxygen atoms present
+        // hide O2 compound icon when there are less than two oxygen atoms present
         if (pBscript.totalOxygen < 2)
         {
             pBscript.oTwoIcon.SetActive(false);
@@ -104,5 +104,29 @@ public class AtomUse : MonoBehaviour
     {
         // spawn in water platform at platform spawn point
         Instantiate(h2oPlatform, h2oPlatformPoint.transform.position, Quaternion.identity);
+
+        // find 1 oxygen atom, and 2 hyrdogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
+        destroyOxygenAtom();
+        destroyHydrogenAtom();
+        destroyHydrogenAtom();
+        pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
+        pBscript.totalHydrogen -= 2; // decrease count of total held hydrogen atoms
+
+        // hide H2O compound icon when there are less than 1 oxygen/2 hydrogen atoms present
+        if (pBscript.totalOxygen < 1 && pBscript.totalHydrogen < 2)
+        {
+            pBscript.h2oIcon.SetActive(false);
+        }
+    }
+
+    void destroyHydrogenAtom()
+    {
+        GameObject hydrogenAtom = playerAtomList.Find(atom => atom.name == "Hydrogen Atom");
+
+        if (hydrogenAtom != null)
+        {
+            playerAtomList.Remove(hydrogenAtom);
+            Destroy(hydrogenAtom);
+        }
     }
 }
