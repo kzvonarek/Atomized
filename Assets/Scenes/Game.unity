@@ -331,7 +331,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 287323371}
         m_TargetAssemblyTypeName: AtomUse, Assembly-CSharp
-        m_MethodName: nButtonClicked
+        m_MethodName: NoButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

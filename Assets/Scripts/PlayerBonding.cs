@@ -11,7 +11,6 @@ public class PlayerBonding : MonoBehaviour
     public List<GameObject> currAtoms = new List<GameObject>();
     public CinemachineVirtualCamera mainCamera;
 
-    // add more if needed for levels with more than one of each element (move to different script?)
     public GameObject heliumIcon;
     public GameObject h2oIcon;
     public GameObject oTwoIcon;
@@ -57,7 +56,7 @@ public class PlayerBonding : MonoBehaviour
             cHFourIcon.SetActive(true);
         }
 
-        if (totalNitrogen >= 1)
+        if (totalNitrogen >= 1 && totalOxygen >= 1)
         {
             nitrogenIcon.SetActive(true);
         }

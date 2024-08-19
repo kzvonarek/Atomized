@@ -61,8 +61,8 @@ public class AtomUse : MonoBehaviour
             pBscript.cHFourIcon.SetActive(false);
         }
 
-        // hide nitrogen atom icon when there are less than 1 nitrogen atom present
-        if (pBscript.totalNitrogen < 1)
+        // hide NO atom icon when there are less than 1 nitrogen/1 oxygen atoms present
+        if (pBscript.totalNitrogen < 1 || pBscript.totalOxygen <= 1)
         {
             pBscript.nitrogenIcon.SetActive(false);
         }
@@ -154,7 +154,7 @@ public class AtomUse : MonoBehaviour
         // launch player away, and break all bonds
         playerObj.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * launchForce);
 
-        // find 1 carbon atom, and 4 hyrdogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
+        // find 1 carbon atom, and 4 hydrogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyCarbonAtom();
         destroyHydrogenAtom();
         destroyHydrogenAtom();
@@ -175,14 +175,16 @@ public class AtomUse : MonoBehaviour
         }
     }
 
-    public void nButtonClicked()
+    public void NoButtonClicked()
     {
-        // create protective shield, prevents one hit from Waterbear
-        Debug.Log("SHIELD");
+        // max fuel for 5 seconds
+        Debug.Log("Nitric Boost");
 
-        // find 1 nitrogen atom in List/collected atoms and destroy them/remove from List (currAtoms)
+        // find 1 nitrogen atom and 1 oxygen atom in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyNitrogenAtom();
+        destroyOxygenAtom();
         pBscript.totalNitrogen -= 1; // decrease count of total held nitrogen atoms
+        pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
     }
 
     void destroyNitrogenAtom()
