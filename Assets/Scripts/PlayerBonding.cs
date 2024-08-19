@@ -12,7 +12,10 @@ public class PlayerBonding : MonoBehaviour
     public CinemachineVirtualCamera mainCamera;
 
     // add more if needed for levels with more than one of each element (move to different script?)
+    public GameObject hydrogenIcon;
     public GameObject heliumIcon;
+    public GameObject carbonIcon;
+    public GameObject nitrogenIcon;
     public GameObject h2oIcon;
     public GameObject oTwoIcon;
 
@@ -53,13 +56,13 @@ public class PlayerBonding : MonoBehaviour
         // temporary
         if (totalNitrogen >= 1)
         {
-            // nitrogenIcon.SetActive(true);
+            nitrogenIcon.SetActive(true);
         }
 
         // temporary
         if (totalCarbon >= 1)
         {
-            // carbonIcon.SetActive(true);
+            carbonIcon.SetActive(true);
         }
     }
 
