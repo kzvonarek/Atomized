@@ -9,6 +9,11 @@ public class GameManagement : MonoBehaviour
     private float timeElapsed;
     private bool paused;
 
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     void Update()
     {
         // timer that showcases hours, minutes, seconds, and milliseconds alive
