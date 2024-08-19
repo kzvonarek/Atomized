@@ -30,7 +30,7 @@ public class WaterBear : MonoBehaviour
         // transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         // Waterbear scales in size over time
-        this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f) * Time.deltaTime;
+        this.transform.localScale += new Vector3(1f, 1f, 1f) * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

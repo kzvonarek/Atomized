@@ -22,6 +22,9 @@ public class PlayerBonding : MonoBehaviour
     // keep count of number of specific atoms
     public int totalOxygen = 0;
     public int totalHydrogen = 0;
+    public int totalHelium = 0;
+    public int totalCarbon = 0;
+    public int totalNitrogen = 0;
 
     void Update()
     {
@@ -34,7 +37,7 @@ public class PlayerBonding : MonoBehaviour
             }
         }
 
-        // check if player has TWO or more oxygen atoms, if so set O2 icon to visible
+        // check if player has sufficient atoms to make icon(s) visible
         if (totalOxygen >= 2)
         {
             oTwoIcon.SetActive(true);
@@ -43,6 +46,23 @@ public class PlayerBonding : MonoBehaviour
         if (totalOxygen >= 1 && totalHydrogen >= 2)
         {
             h2oIcon.SetActive(true);
+        }
+
+        if (totalHelium >= 1)
+        {
+            heliumIcon.SetActive(true);
+        }
+
+        // temporary
+        if (totalNitrogen >= 1)
+        {
+            nitrogenIcon.SetActive(true);
+        }
+
+        // temporary
+        if (totalCarbon >= 1)
+        {
+            carbonIcon.SetActive(true);
         }
     }
 
@@ -89,15 +109,15 @@ public class PlayerBonding : MonoBehaviour
                     bondFunction(2f, 0.3f);
                     break;
                 case "Helium Atom":
-                    heliumIcon.SetActive(true); // display icon in UI
+                    totalHelium += 1;
                     bondFunction(1f, 0.1f);
                     break;
                 case "Carbon Atom":
-                    carbonIcon.SetActive(true);
+                    totalCarbon += 1;
                     bondFunction(5f, 1f);
                     break;
                 case "Nitrogen Atom":
-                    nitrogenIcon.SetActive(true);
+                    totalNitrogen += 1;
                     bondFunction(4f, 0.7f);
                     break;
                 case "Oxygen Atom":

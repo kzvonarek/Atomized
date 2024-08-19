@@ -966,7 +966,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.4, y: 22.699999, z: -10}
+  m_LocalPosition: {x: -0.09, y: -0.19999999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bearSpeed: 5
   playerPos: {fileID: 1454688732}
+  playerObj: {fileID: 1454688725}
 --- !u!60 &869797842
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2065,11 +2066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ad589910d14bd4a86926801c08d253f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -65.4
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ad589910d14bd4a86926801c08d253f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ad589910d14bd4a86926801c08d253f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2600,7 +2601,7 @@ Transform:
   m_GameObject: {fileID: 1378280804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.4, y: 22.699999, z: -10}
+  m_LocalPosition: {x: -0.09, y: -0.19999999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

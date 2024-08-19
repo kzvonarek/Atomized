@@ -55,6 +55,21 @@ public class AtomUse : MonoBehaviour
         // add fuel to fuel bar
         fuelBarScript.HeliumCollected(0.5f); // test for optimal/fair fuel increase
 
+        destroyHeliumAtom();
+        pBscript.totalHelium -= 1; // lower helium count
+
+        // check if there is still more helium atom(s) in list then...
+        GameObject heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
+
+        // ...hide helium atom icon when none are left
+        if (heliumAtom == null)
+        {
+            pBscript.heliumIcon.SetActive(false);
+        }
+    }
+
+    void destroyHeliumAtom()
+    {
         // find a helium atom in List/collected atoms and destroy it/remove from List (currAtoms)
         GameObject heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
 
@@ -62,15 +77,6 @@ public class AtomUse : MonoBehaviour
         {
             playerAtomList.Remove(heliumAtom);
             Destroy(heliumAtom);
-        }
-
-        // check if there is still more helium atom(s) in list then...
-        heliumAtom = playerAtomList.Find(atom => atom.name == "Helium Atom");
-
-        // ...hide helium atom icon when none are left
-        if (heliumAtom == null)
-        {
-            pBscript.heliumIcon.SetActive(false);
         }
     }
 
