@@ -29,7 +29,7 @@ public class PlayerBonding : MonoBehaviour
         // if player is in range, and presses B, player initiates bond with atom
         if (isInTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 canBond = true;
             }

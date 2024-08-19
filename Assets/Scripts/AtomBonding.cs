@@ -52,7 +52,7 @@ public class AtomBonding : MonoBehaviour
         }
 
         // break all bonds when N key is pressed and there is a current bond, freeze position of atom(s)
-        if (Input.GetKeyDown(KeyCode.N) && atomBonded)
+        if (Input.GetKeyDown(KeyCode.E) && atomBonded)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             atomBonded = false;
