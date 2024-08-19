@@ -100,12 +100,12 @@ public class AtomUse : MonoBehaviour
 
         // increase speed by 5f for 5 seconds
         pMscript.speed += 5f;
-        StartCoroutine(fiveSecondTimer());
+        StartCoroutine(fiveSecondTimerO2());
 
         // need to add speed back, which was lost from inititally holding two oxygen atoms
     }
 
-    IEnumerator fiveSecondTimer()
+    IEnumerator fiveSecondTimerO2()
     {
         yield return new WaitForSeconds(5);
 
@@ -177,14 +177,31 @@ public class AtomUse : MonoBehaviour
 
     public void NoButtonClicked()
     {
-        // max fuel for 5 seconds
-        Debug.Log("Nitric Boost");
 
         // find 1 nitrogen atom and 1 oxygen atom in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyNitrogenAtom();
         destroyOxygenAtom();
         pBscript.totalNitrogen -= 1; // decrease count of total held nitrogen atoms
         pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
+
+        // max fuel for 5 seconds
+        fuelBarScript.fuelBar.maxValue = 100;
+        fuelBarScript.fuelBar.value = 100;
+
+        // change fuel bar color to signify nitric oxide boost
+
+        StartCoroutine(fiveSecondTimerNO());
+    }
+
+    IEnumerator fiveSecondTimerNO()
+    {
+        yield return new WaitForSeconds(5);
+
+        // decrease fuel back to normal after 5 seconds
+        fuelBarScript.fuelBar.maxValue = 10;
+        fuelBarScript.fuelBar.value = 10;
+
+        // change fuel bar color back to normal
     }
 
     void destroyNitrogenAtom()

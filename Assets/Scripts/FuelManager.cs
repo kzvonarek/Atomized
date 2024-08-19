@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FuelManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] Slider fuelBar;
+    public Slider fuelBar;
     private float fuelMovingDecrease = 1f;
 
     void Update()

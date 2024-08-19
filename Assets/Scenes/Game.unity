@@ -3444,7 +3444,7 @@ MonoBehaviour:
   h2oIcon: {fileID: 63384483}
   oTwoIcon: {fileID: 763758423}
   cHFourIcon: {fileID: 1987388315}
-  NoIcon: {fileID: 0}
+  NoIcon: {fileID: 172135481}
   totalOxygen: 0
   totalHydrogen: 0
   totalHelium: 0
