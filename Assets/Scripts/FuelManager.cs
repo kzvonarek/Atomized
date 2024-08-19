@@ -9,7 +9,6 @@ public class FuelManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Slider fuelBar;
     private float fuelMovingDecrease = 1f;
-    private float fuelPoisioningRate = 0.5f;
 
     void Update()
     {

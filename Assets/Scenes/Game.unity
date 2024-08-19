@@ -467,6 +467,7 @@ MonoBehaviour:
   playerObj: {fileID: 1454688725}
   h2oPlatform: {fileID: 650317556908837645, guid: 23c53d170275148509873caefb133f2d, type: 3}
   h2oPlatformPoint: {fileID: 1662274909}
+  explodeForce: 10
 --- !u!4 &287323372
 Transform:
   m_ObjectHideFlags: 0
@@ -3198,7 +3199,7 @@ MonoBehaviour:
   heliumIcon: {fileID: 1503028941}
   h2oIcon: {fileID: 63384483}
   oTwoIcon: {fileID: 763758423}
-  cHFourIcon: {fileID: 0}
+  cHFourIcon: {fileID: 1987388315}
   totalOxygen: 0
   totalHydrogen: 0
   totalHelium: 0
@@ -3427,6 +3428,63 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &1535165117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.2117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.325632
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008674465836991071, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_Name
+      value: Hydrogen Atom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
 --- !u!1 &1631893032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3995,6 +4053,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755791510}
   m_CullTransparentMesh: 1
+--- !u!1001 &1826279193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.51549
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9825306
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008674465836991071, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_Name
+      value: Hydrogen Atom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
 --- !u!1 &1840552190
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,6 +4968,8 @@ SceneRoots:
   - {fileID: 865760209}
   - {fileID: 2789246246624003572}
   - {fileID: 1658463736}
+  - {fileID: 1826279193}
+  - {fileID: 1535165117}
   - {fileID: 157146070891907226}
   - {fileID: 1747395775}
   - {fileID: 7993835946418592303}

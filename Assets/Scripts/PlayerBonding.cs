@@ -84,7 +84,7 @@ public class PlayerBonding : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (canBond && other.gameObject.GetComponent<AtomBonding>().atomBonded == false)
+        if (canBond && other.gameObject != null && other.gameObject.GetComponent<AtomBonding>().atomBonded == false)
         {
             // let atom game object know that a bond occured
             other.gameObject.GetComponent<AtomBonding>().atomBonded = true;
