@@ -15,7 +15,7 @@ public class AtomUse : MonoBehaviour
     [SerializeField] GameObject h2oPlatformPoint;
 
     // CH4 (Methane) functionality
-    [SerializeField] float explodeForce;
+    [SerializeField] float launchForce;
 
     // script(s) from Player
     private PlayerBonding pBscript;
@@ -38,12 +38,12 @@ public class AtomUse : MonoBehaviour
 
     void Update()
     {
-        // hide helium atom icon when there are less than one helium atom present
+        // hide helium atom icon when there are less than 1 helium atom present
         if (pBscript.totalHelium < 1)
         {
             pBscript.heliumIcon.SetActive(false);
         }
-        // hide O2 compound icon when there are less than two oxygen atoms present
+        // hide O2 compound icon when there are less than 2 oxygen atoms present
         if (pBscript.totalOxygen < 2)
         {
             pBscript.oTwoIcon.SetActive(false);
@@ -59,6 +59,12 @@ public class AtomUse : MonoBehaviour
         if (pBscript.totalCarbon < 1 || pBscript.totalHydrogen < 4)
         {
             pBscript.cHFourIcon.SetActive(false);
+        }
+
+        // hide nitrogen atom icon when there are less than 1 nitrogen atoms present
+        if (pBscript.totalNitrogen < 1)
+        {
+            pBscript.nitrogenIcon.SetActive(false);
         }
     }
 
@@ -145,8 +151,8 @@ public class AtomUse : MonoBehaviour
 
     public void cH4ButtonClicked()
     {
-        // explode player away, and break all bonds
-        playerObj.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * explodeForce);
+        // launch player away, and break all bonds
+        playerObj.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * launchForce);
 
         // find 1 carbon atom, and 4 hyrdogen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyCarbonAtom();
@@ -154,7 +160,7 @@ public class AtomUse : MonoBehaviour
         destroyHydrogenAtom();
         destroyHydrogenAtom();
         destroyHydrogenAtom();
-        pBscript.totalCarbon -= 1; // decrease count of total held oxygen atoms
+        pBscript.totalCarbon -= 1; // decrease count of total held carbon atoms
         pBscript.totalHydrogen -= 4; // decrease count of total held hydrogen atoms
     }
 
@@ -166,6 +172,27 @@ public class AtomUse : MonoBehaviour
         {
             playerAtomList.Remove(carbonAtom);
             Destroy(carbonAtom);
+        }
+    }
+
+    public void nButtonClicked()
+    {
+        // create protective shield, prevents one hit from Waterbear
+        Debug.Log("SHIELD");
+
+        // find 1 hydrogen atom in List/collected atoms and destroy them/remove from List (currAtoms)
+        destroyNitrogenAtom();
+        pBscript.totalNitrogen -= 1; // decrease count of total held nitrogen atoms
+    }
+
+    void destroyNitrogenAtom()
+    {
+        GameObject nitrogenAtom = playerAtomList.Find(atom => atom.name == "Nitrogen Atom");
+
+        if (nitrogenAtom != null)
+        {
+            playerAtomList.Remove(nitrogenAtom);
+            Destroy(nitrogenAtom);
         }
     }
 }
