@@ -19,7 +19,7 @@ public class PlayerBonding : MonoBehaviour
     public GameObject oTwoIcon;
 
     // keep count of number of specific atoms
-    public int totalOxygen;
+    public int totalOxygen = 0;
 
     void Update()
     {

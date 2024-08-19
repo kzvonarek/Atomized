@@ -58,11 +58,6 @@ public class AtomUse : MonoBehaviour
     // destroy two oxygen atoms, and increase speed by set amount for 5 seconds
     public void O2ButtonClicked()
     {
-        // increase speed by 5f for 5 seconds
-        pMscript.speed += 5f;
-        StartCoroutine(fiveSecondTimer());
-        pMscript.speed -= 5f;
-
         // find 2 oxygen atoms in List/collected atoms and destroy them/remove from List (currAtoms)
         destroyOxygenAtom();
         destroyOxygenAtom();
@@ -73,12 +68,20 @@ public class AtomUse : MonoBehaviour
         {
             pBscript.oTwoIcon.SetActive(false);
         }
+
+        // increase speed by 5f for 5 seconds
+        pMscript.speed += 5f;
+        StartCoroutine(fiveSecondTimer());
+
+        // need to add speed back, which was lost from inititally holding two oxygen atoms
     }
 
     IEnumerator fiveSecondTimer()
     {
-        WaitForSeconds delay = new WaitForSeconds(5);
-        yield return delay;
+        yield return new WaitForSeconds(5);
+
+        // decrease speed by 5f after 5 seconds
+        pMscript.speed -= 5f;
     }
 
     void destroyOxygenAtom()

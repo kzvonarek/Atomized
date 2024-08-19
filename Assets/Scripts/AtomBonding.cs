@@ -72,6 +72,9 @@ public class AtomBonding : MonoBehaviour
 
             // set player speed back to default (12f)
             playerObj.GetComponent<PlayerMovement>().speed = 12f;
+
+            // set oxygen count back to default (0)
+            pBscript.totalOxygen = 0;
         }
     }
 }
