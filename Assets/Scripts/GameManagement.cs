@@ -11,7 +11,7 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
 
     void Update()
