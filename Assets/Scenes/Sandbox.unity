@@ -1808,6 +1808,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &865760208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865760209}
+  m_Layer: 0
+  m_Name: Test Atoms (delete later)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &865760209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865760208}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.022765607, y: 0.12202296, z: 0.00926292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936461002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2794,9 +2825,10 @@ MonoBehaviour:
   heliumIcon: {fileID: 1503028941}
   carbonIcon: {fileID: 1013703576}
   nitrogenIcon: {fileID: 2061762277}
-  h2oIcon: {fileID: 0}
+  h2oIcon: {fileID: 63384483}
   oTwoIcon: {fileID: 763758423}
   totalOxygen: 0
+  totalHydrogen: 0
 --- !u!114 &1454688727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3432,6 +3464,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657692787}
   m_CullTransparentMesh: 1
+--- !u!1001 &1658463736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4504385
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7100136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915054815790633095, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008674465836991071, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
+      propertyPath: m_Name
+      value: Hydrogen Atom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
 --- !u!1 &1662274909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,6 +4449,7 @@ SceneRoots:
   - {fileID: 1030997590}
   - {fileID: 953393749}
   - {fileID: 1649754228}
+  - {fileID: 865760209}
   - {fileID: 2789246246624003572}
   - {fileID: 157146070891907226}
   - {fileID: 1747395775}
@@ -4367,6 +4457,7 @@ SceneRoots:
   - {fileID: 1163765753314675788}
   - {fileID: 458064177386740526}
   - {fileID: 939224674}
+  - {fileID: 1658463736}
   - {fileID: 820196966}
   - {fileID: 1722935090}
   - {fileID: 1565571644}
