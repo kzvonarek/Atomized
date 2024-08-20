@@ -5600,7 +5600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2974256303236654076, guid: 91af39003b50d44d2a0e74fa369790d5, type: 3}
       propertyPath: bearSpeed
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2974256303236654076, guid: 91af39003b50d44d2a0e74fa369790d5, type: 3}
       propertyPath: playerObj
@@ -5620,7 +5620,7 @@ PrefabInstance:
       objectReference: {fileID: 586447877}
     - target: {fileID: 2974256303236654076, guid: 91af39003b50d44d2a0e74fa369790d5, type: 3}
       propertyPath: bearGrowthRate
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6939481934820850243, guid: 91af39003b50d44d2a0e74fa369790d5, type: 3}
       propertyPath: m_LocalPosition.x
