@@ -34,27 +34,24 @@ public class AtomBonding : MonoBehaviour
         // find distance to player from atom
         distanceToPlayer = Vector2.Distance(this.transform.position, playerPos.position);
 
-        // temporarily stops following when too close
+        // atom stops following when too close (moves to current position constantly)
         if (atomBonded && distanceToPlayer < minDistance)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb.MovePosition(transform.position);
         }
 
-        // atom follows player hydrogen when bonded
-        else if (atomBonded && distanceToPlayer > minDistance)
+        // atom follows player when bonded
+        if (atomBonded && distanceToPlayer > minDistance)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
             Vector2 direction = playerPos.position - transform.position;
             Vector2 newPosition = rb.position + direction * atomSpeed * Time.deltaTime;
 
             rb.MovePosition(newPosition);
         }
 
-        // break all bonds when N key is pressed and there is a current bond, freeze position of atom(s)
+        // break all bonds when E key is pressed and there is a current bond, freeze position of atom(s)
         if (Input.GetKeyDown(KeyCode.E) && atomBonded)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             atomBonded = false;
 
             // clear list of atoms (inventory)
@@ -62,14 +59,6 @@ public class AtomBonding : MonoBehaviour
 
             // default camera zoom back to 4.0
             pBscript.mainCamera.m_Lens.OrthographicSize = 4f;
-
-            // deactivate the UI icons of elements
-            //pBscript.hydrogenIcon.SetActive(false);
-            pBscript.heliumIcon.SetActive(false);
-            // pBscript.carbonIcon.SetActive(false);
-            // pBscript.nitrogenIcon.SetActive(false);
-            pBscript.oTwoIcon.SetActive(false);
-            pBscript.h2oIcon.SetActive(false);
 
             // set player speed back to default (12f)
             playerObj.GetComponent<PlayerMovement>().speed = 12f;

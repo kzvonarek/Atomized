@@ -20,7 +20,7 @@ public class AtomFloating : MonoBehaviour
         randomNumber = Random.Range(1, 5);
         if (randomNumber == 1)
         {
-            // move player in direction multiplied by Float Strength
+            // move atom in direction multiplied by Float Strength
             rb.AddForce(Vector3.up * FloatStrength);
         }
         else if (randomNumber == 2)
