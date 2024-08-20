@@ -24,17 +24,27 @@ public class GameManagement : MonoBehaviour
         int milliseconds = Mathf.FloorToInt(timeElapsed * 100 % 100);
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, minutes, seconds, milliseconds);
 
-        // pause game when player presses escape
+        // pause game when player presses escape or presses pause button
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
-            paused = true;
-            Time.timeScale = 0;
+            pauseGame();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && paused == true) // unpause game
         {
-            paused = false;
-            Time.timeScale = 1;
+            unpauseGame();
         }
         // make it open up screen, that allows player to see Chemist Book, controls, and go to menu/resume
+    }
+
+    public void pauseGame()
+    {
+        paused = true;
+        Time.timeScale = 0;
+    }
+
+    public void unpauseGame()
+    {
+        paused = false;
+        Time.timeScale = 1;
     }
 }
