@@ -13,7 +13,7 @@ public class AtomSpawner : MonoBehaviour
 
     [SerializeField] float minSpawnTime = 1f; // min. time between spawns
     [SerializeField] float maxSpawnTime = 2f; // max. time between spawns
-    [SerializeField] float totalAtoms = 0; // current total atoms in area
+    public float totalAtoms = 0; // current total atoms in area
     private float maxAtoms = 200; // max allowed atoms in area
     private float randomNumber; // random number to determine which atom to spawn
 
@@ -28,7 +28,7 @@ public class AtomSpawner : MonoBehaviour
         while (totalAtoms < maxAtoms)
         {
             // generate a random spawn position for atom
-            Vector2 randomSpawnPosition = new Vector2(Random.Range(-88, 88), Random.Range(7, 160));
+            Vector2 randomSpawnPosition = new Vector2(Random.Range(-88, 88), Random.Range(7, 124));
 
             // spawn random atom at random position
             randomNumber = Random.Range(1, 6);

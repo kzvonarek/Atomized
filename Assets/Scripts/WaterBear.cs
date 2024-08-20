@@ -13,12 +13,15 @@ public class WaterBear : MonoBehaviour
     [SerializeField] GameObject playerObj;
     [SerializeField] float rotationSpeed;
     [SerializeField] float rotationModifier;
+    [SerializeField] GameObject atomSpawner;
+    private AtomSpawner aSscript;
     private PlayerBonding pBscript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         pBscript = playerObj.GetComponent<PlayerBonding>();
+        aSscript = atomSpawner.GetComponent<AtomSpawner>();
     }
 
     void Update()
@@ -48,10 +51,11 @@ public class WaterBear : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        // Water Bear destroys atoms in its way
+        // Water Bear destroys atoms in its way, reduces total atom count
         if (other.gameObject.CompareTag("Atom"))
         {
             Destroy(other.gameObject);
+            aSscript.totalAtoms -= 1;
 
             // check if atom was bonded to Player, and remove it from list/decrease count from total
             AtomBonding aBscript = other.gameObject.GetComponent<AtomBonding>();
