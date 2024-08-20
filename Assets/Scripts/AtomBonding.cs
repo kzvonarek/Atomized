@@ -49,8 +49,8 @@ public class AtomBonding : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
-        // break all bonds when C key is pressed and there is a current bond, freeze position of atom(s)
-        if (Input.GetKeyDown(KeyCode.C) && atomBonded)
+        // break all bonds when B key is pressed and there is a current bond, freeze position of atom(s)
+        if (Input.GetKeyDown(KeyCode.B) && atomBonded)
         {
             atomBonded = false;
 
