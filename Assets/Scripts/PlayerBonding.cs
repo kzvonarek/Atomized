@@ -15,7 +15,7 @@ public class PlayerBonding : MonoBehaviour
     public GameObject h2oIcon;
     public GameObject oTwoIcon;
     public GameObject cHFourIcon;
-    public GameObject NoIcon;
+    public GameObject n2oIcon;
 
     // keep count of number of specific atoms
     public int totalOxygen = 0;
@@ -56,9 +56,9 @@ public class PlayerBonding : MonoBehaviour
             cHFourIcon.SetActive(true);
         }
 
-        if (totalNitrogen >= 1 && totalOxygen >= 1)
+        if (totalNitrogen >= 2 && totalOxygen >= 1)
         {
-            NoIcon.SetActive(true);
+            n2oIcon.SetActive(true);
         }
     }
 

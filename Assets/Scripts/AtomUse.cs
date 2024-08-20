@@ -17,7 +17,7 @@ public class AtomUse : MonoBehaviour
     // CH4 (Methane) functionality
     [SerializeField] float launchForce;
 
-    // NO (Nitric Oxide) functionality, fuel bar sprites
+    // N2O (Nitrous Oxide) functionality, fuel bar sprites
     [SerializeField] Image fuelBarSprite;
     [SerializeField] Sprite[] fuelBarSpriteList;
 
@@ -66,10 +66,10 @@ public class AtomUse : MonoBehaviour
             pBscript.cHFourIcon.SetActive(false);
         }
 
-        // hide NO compound icon when there are less than 1 nitrogen/1 oxygen atoms present
-        if (pBscript.totalNitrogen < 1 || pBscript.totalOxygen <= 1)
+        // hide N2O compound icon when there are less than 2 nitrogen/1 oxygen atoms present
+        if (pBscript.totalNitrogen < 2 || pBscript.totalOxygen < 1)
         {
-            pBscript.NoIcon.SetActive(false);
+            pBscript.n2oIcon.SetActive(false);
         }
     }
 
@@ -180,20 +180,21 @@ public class AtomUse : MonoBehaviour
         }
     }
 
-    public void NoButtonClicked()
+    public void n2oButtonClicked()
     {
 
-        // find 1 nitrogen atom and 1 oxygen atom in List/collected atoms and destroy them/remove from List (currAtoms)
+        // find 2 nitrogen atom and 1 oxygen atom in List/collected atoms and destroy them/remove from List (currAtoms)
+        destroyNitrogenAtom();
         destroyNitrogenAtom();
         destroyOxygenAtom();
-        pBscript.totalNitrogen -= 1; // decrease count of total held nitrogen atoms
+        pBscript.totalNitrogen -= 2; // decrease count of total held nitrogen atoms
         pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
 
         // max fuel for 5 seconds
         fuelBarScript.fuelBar.maxValue = 100;
         fuelBarScript.fuelBar.value = 100;
 
-        // change fuel bar color to signify nitric oxide boost, using bool
+        // change fuel bar color to signify nitrous oxide boost, using bool
         fuelBarSprite.sprite = fuelBarSpriteList[1];
 
         StartCoroutine(fiveSecondTimerNO());
