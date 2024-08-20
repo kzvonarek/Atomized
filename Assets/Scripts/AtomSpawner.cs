@@ -38,12 +38,14 @@ public class AtomSpawner : MonoBehaviour
                 spawnHydrogen(randomSpawnPosition);
                 totalAtoms += 2; // increase total number of atoms count
             }
-            else if (randomNumber == 2) // spawn helium atoms in a group of 3
+            else if (randomNumber == 2) // spawn helium atoms in a group of 5
             {
                 spawnHelium(randomSpawnPosition);
                 spawnHelium(randomSpawnPosition);
                 spawnHelium(randomSpawnPosition);
-                totalAtoms += 3;
+                spawnHelium(randomSpawnPosition);
+                spawnHelium(randomSpawnPosition);
+                totalAtoms += 5;
             }
             else if (randomNumber == 3)  // spawn carbon atom
             {

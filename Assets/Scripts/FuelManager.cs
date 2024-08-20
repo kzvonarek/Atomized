@@ -8,7 +8,7 @@ public class FuelManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
     public Slider fuelBar;
-    private float fuelMovingDecrease = 1f;
+    private float fuelMovingDecrease = 0.5f;
 
     // N2O (Nitrous Oxide) functionality, fuel bar sprites
     [SerializeField] Image fuelBarSprite;
