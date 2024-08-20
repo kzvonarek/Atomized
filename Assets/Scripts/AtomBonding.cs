@@ -31,6 +31,16 @@ public class AtomBonding : MonoBehaviour
 
     void Update()
     {
+        // change color of atom to signify it is bonded or not with player
+        if (atomBonded) // bonded = green
+        {
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(0, 255, 0, 255);
+        }
+        else // not bonded = deafult
+        {
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+        }
+
         // find distance to player from atom
         distanceToPlayer = Vector2.Distance(this.transform.position, playerPos.position);
 
