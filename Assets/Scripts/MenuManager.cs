@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
     // main menus
     public void playGame()
     {
