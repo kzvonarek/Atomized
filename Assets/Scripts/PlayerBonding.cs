@@ -92,11 +92,9 @@ public class PlayerBonding : MonoBehaviour
             currAtoms.Add(other.gameObject);
 
             /* update these comments near end
-            - depending on element (name) of atom, [temp] activate an icon of it on UI (different for specific atoms)
             - zoom out camera when picking up an atom
             - decrease speed when picking up atom
             - the bigger the atom, the larger the camera scales out and the more speed is decreased
-            - for helium, increase current fuel value
             */
             switch (other.gameObject.name)
             {
