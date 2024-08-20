@@ -15,6 +15,8 @@ public class WaterBear : MonoBehaviour
     [SerializeField] float rotationModifier;
     [SerializeField] GameObject atomSpawner;
     private AtomSpawner aSscript;
+    [SerializeField] GameObject gameManager;
+    private GameManagement gMscript;
     private PlayerBonding pBscript;
 
     void Start()
@@ -22,6 +24,7 @@ public class WaterBear : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pBscript = playerObj.GetComponent<PlayerBonding>();
         aSscript = atomSpawner.GetComponent<AtomSpawner>();
+        gMscript = gameManager.GetComponent<GameManagement>();
     }
 
     void Update()
@@ -47,8 +50,7 @@ public class WaterBear : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // Water Bear 'kills' player and ends game
-            // eventually make it show death screen/pause current scene until player either restarts/goes to menu
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gMscript.dead = true;
         }
 
         // Water Bear destroys atoms in its way, reduces total atom count

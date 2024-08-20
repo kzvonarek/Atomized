@@ -5,10 +5,19 @@ using UnityEngine;
 
 public class GameManagement : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject deathMenu;
+    [SerializeField] GameObject pauseButton;
+    [SerializeField] GameObject heliumFuelBar;
+    [SerializeField] GameObject HeIcon;
+    [SerializeField] GameObject o2Icon;
+    [SerializeField] GameObject n2oIcon;
+    [SerializeField] GameObject h2oIcon;
+    [SerializeField] GameObject cH4Icon;
+    [SerializeField] TextMeshProUGUI timerText;
     private float timeElapsed;
     private bool paused;
+    public bool dead;
 
     void Start()
     {
@@ -27,13 +36,18 @@ public class GameManagement : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, minutes, seconds, milliseconds);
 
         // pause game when player presses escape or presses pause button
-        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false && dead == false)
         {
             pauseGame();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true) // unpause game
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true && dead == false) // unpause game
         {
             unpauseGame();
+        }
+
+        if (dead)
+        {
+            death();
         }
     }
 
@@ -49,5 +63,21 @@ public class GameManagement : MonoBehaviour
         paused = false;
         pauseMenu.SetActive(false); // make pause menu invisible
         Time.timeScale = 1;
+    }
+
+    // on death hide all icons/UI, and allow for Main Menu or game Restart
+    public void death()
+    {
+        Time.timeScale = 0;
+
+        deathMenu.SetActive(true);
+
+        pauseButton.SetActive(false);
+        heliumFuelBar.SetActive(false);
+        HeIcon.SetActive(false);
+        h2oIcon.SetActive(false);
+        n2oIcon.SetActive(false);
+        cH4Icon.SetActive(false);
+        o2Icon.SetActive(false);
     }
 }
