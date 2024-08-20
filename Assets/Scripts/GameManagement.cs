@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManagement : MonoBehaviour
 {
+    private AudioSource gMaudioSource;
+    [SerializeField] AudioClip gameOverSFX;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject pauseButton;
@@ -22,6 +24,7 @@ public class GameManagement : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        gMaudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -67,6 +70,7 @@ public class GameManagement : MonoBehaviour
     // on death hide all icons/UI, and allow for Main Menu or game Restart
     public void death()
     {
+        gMaudioSource.PlayOneShot(gameOverSFX, 0.5f);
         Time.timeScale = 0;
 
         deathMenu.SetActive(true);
