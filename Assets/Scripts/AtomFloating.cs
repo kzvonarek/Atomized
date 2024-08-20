@@ -21,19 +21,19 @@ public class AtomFloating : MonoBehaviour
         if (randomNumber == 1)
         {
             // move atom in direction multiplied by Float Strength
-            rb.AddForce(Vector3.up * FloatStrength * Time.deltaTime);
+            rb.AddForce(Vector3.up * FloatStrength);
         }
         else if (randomNumber == 2)
         {
-            rb.AddForce(Vector3.down * FloatStrength * Time.deltaTime);
+            rb.AddForce(Vector3.down * FloatStrength);
         }
         else if (randomNumber == 3)
         {
-            rb.AddForce(Vector3.right * FloatStrength * Time.deltaTime);
+            rb.AddForce(Vector3.right * FloatStrength);
         }
         else if (randomNumber == 4)
         {
-            rb.AddForce(Vector3.left * FloatStrength * Time.deltaTime);
+            rb.AddForce(Vector3.left * FloatStrength);
         }
 
         // if an atom is moved too fast (by colliding with player or other atom), slow it down
