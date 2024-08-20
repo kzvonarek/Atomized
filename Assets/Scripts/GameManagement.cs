@@ -6,12 +6,14 @@ using UnityEngine;
 public class GameManagement : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] GameObject pauseMenu;
     private float timeElapsed;
     private bool paused;
 
     void Start()
     {
-        //Application.targetFrameRate = 60;
+        //Application.targetFrameRate = ??;
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -33,18 +35,19 @@ public class GameManagement : MonoBehaviour
         {
             unpauseGame();
         }
-        // make it open up screen, that allows player to see Chemist Book, controls, and go to menu/resume
     }
 
     public void pauseGame()
     {
         paused = true;
+        pauseMenu.SetActive(true); // make pause menu visible
         Time.timeScale = 0;
     }
 
     public void unpauseGame()
     {
         paused = false;
+        pauseMenu.SetActive(false); // make pause menu invisible
         Time.timeScale = 1;
     }
 }
