@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf93e60f0bba04a889fa89b85269219c
+guid: 31d8c1c9076804bfa86697016cecb02c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Water Bear_Frame_0
     originalName: 
-    pivot: {x: 0.45945948, y: -0.2972973}
+    pivot: {x: 0.4864865, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 37
       height: 37
-    spriteID: ff5c5ed3ad29e45c596152657867d6f0
+    spriteID: 864f51859b96742899ba6fb14ee27eb3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 50, y: 4}
   - name: Water Bear_Frame_1
     originalName: 
-    pivot: {x: 0.45945948, y: -0.2972973}
+    pivot: {x: 0.4864865, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 49
       width: 37
       height: 37
-    spriteID: e74c25f3623b246049c321e152c3418a
+    spriteID: f2d927511608e4304b0866ccba04f621
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 49}
   - name: Water Bear_Frame_2
     originalName: 
-    pivot: {x: 0.47368422, y: -0.2972973}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 38
       height: 37
-    spriteID: 944ae2d5e2c3b40448f9ee882cbbc17d
+    spriteID: 0d8cc35118fcc4388bd7c175f698d5eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -194,33 +194,33 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 15
-        y: 11
+        x: 1
+        y: 0
         width: 37
         height: 37
-      spriteId: ff5c5ed3ad29e45c596152657867d6f0
+      spriteId: 864f51859b96742899ba6fb14ee27eb3
     - name: Water Bear_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 15
-        y: 11
+        x: 1
+        y: 0
         width: 37
         height: 37
-      spriteId: e74c25f3623b246049c321e152c3418a
+      spriteId: f2d927511608e4304b0866ccba04f621
     - name: Water Bear_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 14
-        y: 11
+        x: 0
+        y: 0
         width: 38
         height: 37
-      spriteId: 944ae2d5e2c3b40448f9ee882cbbc17d
+      spriteId: 0d8cc35118fcc4388bd7c175f698d5eb
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 38, y: 37}
