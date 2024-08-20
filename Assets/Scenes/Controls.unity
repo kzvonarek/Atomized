@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 723144783}
   - component: {fileID: 723144782}
   m_Layer: 5
-  m_Name: Helium Ring Image
+  m_Name: Hydrogen Ring Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1857,7 +1857,7 @@ GameObject:
   - component: {fileID: 790571699}
   - component: {fileID: 790571698}
   m_Layer: 5
-  m_Name: Helium Image
+  m_Name: Hydrogen Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
