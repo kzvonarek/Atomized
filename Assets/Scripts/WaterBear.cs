@@ -50,7 +50,7 @@ public class WaterBear : MonoBehaviour
         // Waterbear increases speed over time, once it fully grew
         if (this.gameObject.transform.localScale.x >= 200 && this.gameObject.transform.localScale.y >= 200 && this.gameObject.transform.localScale.z >= 200)
         {
-            bearSpeed += Time.deltaTime / 10;
+            bearSpeed += Time.deltaTime / 20;
         }
     }
 

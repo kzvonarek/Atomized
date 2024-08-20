@@ -30,23 +30,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.9939
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.9939
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.9939
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.912838
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1813307
+      value: 60.6
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,9 +158,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0049999924, y: 0.19328485}
+  m_Offset: {x: 0.004999995, y: 0.18786502}
   serializedVersion: 2
-  m_Radius: 0.18618356
+  m_Radius: 0.19160342
 --- !u!114 &2974256303236654076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,9 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a136672fba6b9455f8250d59539e311f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bearSpeed: 5
-  bearGrowthRate: 0.5
+  bearSpeed: 10
+  bearGrowthRate: 3
   playerPos: {fileID: 0}
   playerObj: {fileID: 0}
   rotationSpeed: 20
   rotationModifier: 270
+  atomSpawner: {fileID: 0}
+  gameManager: {fileID: 0}
