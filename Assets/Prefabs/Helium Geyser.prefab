@@ -12,29 +12,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helium Geyser
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -689797793
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.5054
+      value: 15.598473
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.5054
+      value: 15.598473
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.5054
+      value: 15.598473
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: 72.45168
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.99
+      value: -8.142183
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 91a7642e1e9664c168b153ff4f55e263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -124,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004999995, y: 0.14142103}
+  m_Offset: {x: -0.0044906884, y: 0.082798764}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4888889, y: 0}
@@ -135,5 +147,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.28284207}
+  m_Size: {x: 0.4208953, y: 0.16559753}
   m_EdgeRadius: 0

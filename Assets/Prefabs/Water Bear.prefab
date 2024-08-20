@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 306800241
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5

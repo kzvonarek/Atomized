@@ -42,6 +42,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3815778533
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player Outline
+    uniqueID: 2993198385
+    locked: 0
+  - name: Player
+    uniqueID: 358707113
+    locked: 0
+  - name: Geysers
+    uniqueID: 3605169503
+    locked: 0
+  - name: Islands
+    uniqueID: 1688681523
+    locked: 0
+  - name: Atoms
+    uniqueID: 935037993
+    locked: 0
+  - name: Waterbear
+    uniqueID: 306800241
     locked: 0
