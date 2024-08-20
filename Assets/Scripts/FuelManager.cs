@@ -10,6 +10,16 @@ public class FuelManager : MonoBehaviour
     public Slider fuelBar;
     private float fuelMovingDecrease = 1f;
 
+    // fuel bar sprites
+    [SerializeField] Image fuelBarSprite;
+    [SerializeField] Sprite fuelBarSpriteList;
+    private AtomUse aUscript;
+
+    void Start()
+    {
+        aUscript = GetComponent<AtomUse>();
+    }
+
     void Update()
     {
         // decrease fuel by set amount when UFO is moving (while player is inputting)
@@ -27,11 +37,21 @@ public class FuelManager : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().sufficientFuel = true;
         }
+
+        if (aUscript.nitroed)
+        {
+            changeImage();
+        }
     }
 
     // increase amount of curr. fuel
     public void HeliumCollected(float fuelHeIncrease)
     {
         fuelBar.value += fuelHeIncrease;
+    }
+
+    void changeImage()
+    {
+        fuelBarSprite.sprite = fuelBarSpriteList;
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AtomUse : MonoBehaviour
 {
@@ -16,6 +16,12 @@ public class AtomUse : MonoBehaviour
 
     // CH4 (Methane) functionality
     [SerializeField] float launchForce;
+
+    // NO (Nitric Oxide) functionality
+    public bool nitroed;
+    // fuel bar sprites
+    [SerializeField] Image fuelBarSprite;
+    [SerializeField] Sprite fuelBarSpriteList;
 
     // script(s) from Player
     private PlayerBonding pBscript;
@@ -72,7 +78,7 @@ public class AtomUse : MonoBehaviour
     public void HeliumButtonClicked()
     {
         // add fuel to fuel bar
-        fuelBarScript.HeliumCollected(0.5f); // test for optimal/fair fuel increase
+        fuelBarScript.HeliumCollected(1f); // test for optimal/fair fuel increase
 
         destroyHeliumAtom();
         pBscript.totalHelium -= 1; // lower helium count
@@ -188,7 +194,10 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.maxValue = 100;
         fuelBarScript.fuelBar.value = 100;
 
-        // change fuel bar color to signify nitric oxide boost
+        // change fuel bar color to signify nitric oxide boost, using bool
+        nitroed = true;
+        fuelBarSprite.sprite = fuelBarSpriteList;
+
 
         StartCoroutine(fiveSecondTimerNO());
     }
@@ -201,7 +210,8 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.maxValue = 10;
         fuelBarScript.fuelBar.value = 10;
 
-        // change fuel bar color back to normal
+        // change fuel bar color back to normal, using bool
+        nitroed = false;
     }
 
     void destroyNitrogenAtom()
