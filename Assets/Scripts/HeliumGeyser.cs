@@ -8,9 +8,14 @@ public class HeliumGeyser : MonoBehaviour
     private bool isInGeyser = false;
     private FuelManager fuelBarScript;
 
+    // audio
+    private AudioSource geyserAudioSource;
+    [SerializeField] AudioClip geyserSFX;
+
     void Start()
     {
         fuelBarScript = GameObject.FindWithTag("Fuel Manager").GetComponent<FuelManager>();
+        geyserAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -26,6 +31,7 @@ public class HeliumGeyser : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            geyserAudioSource.PlayOneShot(geyserSFX);
             isInGeyser = true;
         }
     }
