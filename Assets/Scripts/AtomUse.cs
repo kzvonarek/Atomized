@@ -194,7 +194,7 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.value = 100;
 
         // change fuel bar color to signify nitric oxide boost, using bool
-        fuelBarSprite.sprite = fuelBarSpriteList[11];
+        fuelBarSprite.sprite = fuelBarSpriteList[1];
 
         StartCoroutine(fiveSecondTimerNO());
     }
@@ -208,7 +208,7 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.value = 10;
 
         // change fuel bar color back to normal, using bool
-        fuelBarSprite.sprite = fuelBarSpriteList[10];
+        fuelBarSprite.sprite = fuelBarSpriteList[0];
     }
 
     void destroyNitrogenAtom()

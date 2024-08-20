@@ -17,7 +17,7 @@ public class HeliumGeyser : MonoBehaviour
     {
         if (isInGeyser)
         {
-            fuelBarScript.HeliumCollected(1f);
+            fuelBarScript.HeliumCollected(0.05f);
         }
     }
 

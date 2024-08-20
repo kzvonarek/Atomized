@@ -10,6 +10,10 @@ public class FuelManager : MonoBehaviour
     public Slider fuelBar;
     private float fuelMovingDecrease = 1f;
 
+    // NO (Nitric Oxide) functionality, fuel bar sprites
+    [SerializeField] Image fuelBarSprite;
+    [SerializeField] Sprite[] fuelBarSpriteList;
+
     void Update()
     {
         // decrease fuel by set amount when UFO is moving (while player is inputting)
@@ -27,6 +31,53 @@ public class FuelManager : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().sufficientFuel = true;
         }
+
+        // set fuel bar to corresponding sprite based on amount
+        if (fuelBar.value < 1)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[0];
+        }
+        if (fuelBar.value < 2 && fuelBar.value >= 1)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[1];
+        }
+        if (fuelBar.value < 3 && fuelBar.value >= 2) // example fuel between 2-3 (not inclusive)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[2]; // so fuel bar is filled by 2
+        }
+        if (fuelBar.value < 4 && fuelBar.value >= 3)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[3];
+        }
+        if (fuelBar.value < 5 && fuelBar.value >= 4)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[4];
+        }
+        if (fuelBar.value < 6 && fuelBar.value >= 5)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[5];
+        }
+        if (fuelBar.value < 7 && fuelBar.value >= 6)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[6];
+        }
+        if (fuelBar.value < 8 && fuelBar.value >= 7)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[7];
+        }
+        if (fuelBar.value < 9 && fuelBar.value >= 8)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[8];
+        }
+        if (fuelBar.value < 10 && fuelBar.value >= 9)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[9];
+        }
+        if (fuelBar.value == 10)
+        {
+            fuelBarSprite.sprite = fuelBarSpriteList[10];
+        }
+
     }
 
     // increase amount of curr. fuel
