@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hydrogenPrefab: {fileID: 5008674465836991071, guid: cd3c84b720d58481c80b89dbeded7fb4, type: 3}
-  heliumPrefab: {fileID: 1264510133}
+  heliumPrefab: {fileID: 7255883929006521042, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
   carbonPrefab: {fileID: 7327877562473502194, guid: b8d30b43aabf74ef29a5c00b5c020d52, type: 3}
   nitrogenPrefab: {fileID: 6753921146557515202, guid: b8081685404b44a0baf0d84e9adecd14, type: 3}
   oxygenPrefab: {fileID: 1374889870924497624, guid: b1c6e03b3f0cd4866a91b6c230d53cca, type: 3}
@@ -2495,11 +2495,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7250863777138871568, guid: 7e4338d841f914a8b99103315f93f10c, type: 3}
   m_PrefabInstance: {fileID: 7179193657574226956}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1264510133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7255883929006521042, guid: e50f8e5ea49e448d799331a1796a2e15, type: 3}
-  m_PrefabInstance: {fileID: 157146070891907226}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378280804
 GameObject:
