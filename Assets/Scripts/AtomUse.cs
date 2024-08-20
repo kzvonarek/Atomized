@@ -17,11 +17,10 @@ public class AtomUse : MonoBehaviour
     // CH4 (Methane) functionality
     [SerializeField] float launchForce;
 
-    // NO (Nitric Oxide) functionality
-    public bool nitroed;
-    // fuel bar sprites
+    // NO (Nitric Oxide) functionality, fuel bar sprites
     [SerializeField] Image fuelBarSprite;
-    [SerializeField] Sprite fuelBarSpriteList;
+    [SerializeField] Sprite[] fuelBarSpriteList;
+
 
     // script(s) from Player
     private PlayerBonding pBscript;
@@ -195,9 +194,7 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.value = 100;
 
         // change fuel bar color to signify nitric oxide boost, using bool
-        nitroed = true;
-        fuelBarSprite.sprite = fuelBarSpriteList;
-
+        fuelBarSprite.sprite = fuelBarSpriteList[11];
 
         StartCoroutine(fiveSecondTimerNO());
     }
@@ -211,7 +208,7 @@ public class AtomUse : MonoBehaviour
         fuelBarScript.fuelBar.value = 10;
 
         // change fuel bar color back to normal, using bool
-        nitroed = false;
+        fuelBarSprite.sprite = fuelBarSpriteList[10];
     }
 
     void destroyNitrogenAtom()

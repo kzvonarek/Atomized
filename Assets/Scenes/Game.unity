@@ -654,6 +654,20 @@ MonoBehaviour:
   h2oPlatform: {fileID: 4103194340749530715, guid: 23c53d170275148509873caefb133f2d, type: 3}
   h2oPlatformPoint: {fileID: 1662274909}
   launchForce: 0
+  fuelBarSprite: {fileID: 1176570682}
+  fuelBarSpriteList:
+  - {fileID: -6005740005363294134, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 1239813635898067804, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: -3272003194453815256, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: -1622163750093811460, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 3935319266894363385, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 483065159990864919, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 6424624903663813182, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: -7504695163964547887, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 5064523366500378090, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: -2851816990673241944, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: -5678218090282826392, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  - {fileID: 2811654890661971934, guid: 3f91bf41e78054cf99cb3ddf90c0f59c, type: 3}
 --- !u!4 &287323372
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,11 +2469,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1657692788}
+  - {fileID: 1176570681}
+  - {fileID: 1840552191}
   m_Father: {fileID: 2077357560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228.3, y: 196.8}
+  m_AnchoredPosition: {x: -246.3, y: 195.8}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936461004
@@ -3045,7 +3061,7 @@ GameObject:
   - component: {fileID: 1176570683}
   - component: {fileID: 1176570682}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Fuel Bar Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3058,16 +3074,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176570680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2572777, y: 0.44909143, z: 0.6653305}
+  m_LocalScale: {x: 1.6278726, y: 0.3238696, z: 0.47981393}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2077357560}
+  m_Father: {fileID: 936461003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.6, y: 193}
+  m_AnchoredPosition: {x: -6.8, y: -1.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176570682
@@ -3090,7 +3106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -440033896259278424, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
+  m_Sprite: {fileID: -6005740005363294134, guid: b2c50c5b761a34e3a8a56180209e1650, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3989,7 +4005,7 @@ GameObject:
   - component: {fileID: 1631893034}
   - component: {fileID: 1631893035}
   m_Layer: 0
-  m_Name: Helium Fuel Manager (Object)
+  m_Name: Fuel Bar Manager (Object)
   m_TagString: Fuel Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4024,8 +4040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1454688725}
   fuelBar: {fileID: 936461004}
-  defaultFuelBars: []
-  defaultFuelBar: {fileID: 0}
 --- !u!1 &1649754227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,7 +4213,7 @@ GameObject:
   - component: {fileID: 1657692790}
   - component: {fileID: 1657692789}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fuel Bar Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4617,7 +4631,7 @@ GameObject:
   - component: {fileID: 1840552193}
   - component: {fileID: 1840552192}
   m_Layer: 5
-  m_Name: Helium Fuel Icon
+  m_Name: Fuel Bar Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4630,16 +4644,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840552190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.42397198, y: 0.42397198, z: 0.42397198}
+  m_LocalScale: {x: 0.423972, y: 0.423972, z: 0.423972}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2077357560}
+  m_Father: {fileID: 936461003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362.30002, y: 192.9}
+  m_AnchoredPosition: {x: -119.6, y: -3.9000092}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840552192
@@ -4750,7 +4764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 183}
+  m_AnchoredPosition: {x: 2, y: 189.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975185848
@@ -5047,9 +5061,7 @@ RectTransform:
   - {fileID: 1987388316}
   - {fileID: 172135482}
   - {fileID: 936461003}
-  - {fileID: 1840552191}
   - {fileID: 1975185847}
-  - {fileID: 1176570681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
