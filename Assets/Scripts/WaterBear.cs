@@ -42,12 +42,13 @@ public class WaterBear : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
 
         // Waterbear scales in size over time
-        while (this.gameObject.transform.localScale.x < 200 && this.gameObject.transform.localScale.y < 200 && this.gameObject.transform.localScale.z < 200)
+        if (this.gameObject.transform.localScale.x < 200 && this.gameObject.transform.localScale.y < 200 && this.gameObject.transform.localScale.z < 200)
         {
             this.transform.localScale += new Vector3(bearGrowthRate, bearGrowthRate, bearGrowthRate) * Time.deltaTime;
         }
 
-        while (this.gameObject.transform.localScale.x >= 200 && this.gameObject.transform.localScale.y >= 200 && this.gameObject.transform.localScale.z >= 200)
+        // Waterbear increases speed over time, once it fully grew
+        if (this.gameObject.transform.localScale.x >= 200 && this.gameObject.transform.localScale.y >= 200 && this.gameObject.transform.localScale.z >= 200)
         {
             bearSpeed += Time.deltaTime / 10;
         }
