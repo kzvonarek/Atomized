@@ -1841,6 +1841,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Waterbear
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 31d8c1c9076804bfa86697016cecb02c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.9939
@@ -3202,6 +3210,8 @@ MonoBehaviour:
   bearGrowthRate: 0.5
   playerPos: {fileID: 1454688732}
   playerObj: {fileID: 1454688725}
+  rotationSpeed: 20
+  rotationModifier: 280
 --- !u!58 &1482410884
 CircleCollider2D:
   m_ObjectHideFlags: 0

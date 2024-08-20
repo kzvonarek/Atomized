@@ -11,6 +11,8 @@ public class WaterBear : MonoBehaviour
     [SerializeField] float bearGrowthRate;
     [SerializeField] Transform playerPos; // get position of player
     [SerializeField] GameObject playerObj;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float rotationModifier;
     private PlayerBonding pBscript;
 
     void Start()
@@ -27,8 +29,11 @@ public class WaterBear : MonoBehaviour
         rb.MovePosition(newPosition);
 
         // rotation that makes Waterbear sprite head always face player
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        // credit to: https://www.youtube.com/watch?v=RNPetUa8_PQ
+        Vector3 vectorToTarget = playerObj.transform.position - transform.position;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
 
         // Waterbear scales in size over time
         this.transform.localScale += new Vector3(bearGrowthRate, bearGrowthRate, bearGrowthRate) * Time.deltaTime;
