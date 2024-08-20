@@ -21,7 +21,6 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
-        //Application.targetFrameRate = ??;
         Time.timeScale = 1;
     }
 

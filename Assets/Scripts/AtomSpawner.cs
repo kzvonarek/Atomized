@@ -19,7 +19,6 @@ public class AtomSpawner : MonoBehaviour
 
     void Start()
     {
-        // start spawn objects coroutine
         StartCoroutine(SpawnAtomAtRandomIntervals());
     }
 

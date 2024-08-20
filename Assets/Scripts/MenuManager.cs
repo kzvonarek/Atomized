@@ -26,9 +26,4 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-
-    public void resumeGame()
-    {
-        // resume game
-    }
 }

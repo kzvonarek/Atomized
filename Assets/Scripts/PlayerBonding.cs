@@ -91,7 +91,7 @@ public class PlayerBonding : MonoBehaviour
             // add collected atom to a list of held atom(s)
             currAtoms.Add(other.gameObject);
 
-            /* update these comments near end
+            /*
             - zoom out camera when picking up an atom
             - decrease speed when picking up atom
             - the bigger the atom, the larger the camera scales out and the more speed is decreased

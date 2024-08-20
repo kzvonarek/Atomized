@@ -10,7 +10,7 @@ public class FuelManager : MonoBehaviour
     public Slider fuelBar;
     private float fuelMovingDecrease = 1f;
 
-    // NO (Nitric Oxide) functionality, fuel bar sprites
+    // N2O (Nitrous Oxide) functionality, fuel bar sprites
     [SerializeField] Image fuelBarSprite;
     [SerializeField] Sprite[] fuelBarSpriteList;
 
