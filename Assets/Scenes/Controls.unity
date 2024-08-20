@@ -3989,7 +3989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -117.530914, y: -231.7577}
+  m_AnchoredPosition: {x: -116.6, y: -240.3}
   m_SizeDelta: {x: 60, y: -70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935369271
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atom: Get near, and collect with right-click'
+  m_text: 'Atom: Get near, and collect with right-click. Get rid of with b'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afa9daadec9cb4ee39d2b5b235e8cb44, type: 2}
   m_sharedMaterial: {fileID: -5487473072459272775, guid: afa9daadec9cb4ee39d2b5b235e8cb44, type: 2}
