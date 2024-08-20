@@ -26,10 +26,10 @@ public class PlayerBonding : MonoBehaviour
 
     void Update()
     {
-        // if player is in range, and presses B, player initiates bond with atom
+        // if player is in range, and presses X, player initiates bond with atom
         if (isInTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 canBond = true;
             }
