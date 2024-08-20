@@ -6,6 +6,8 @@ using Cinemachine;
 
 public class PlayerBonding : MonoBehaviour
 {
+    private AudioSource playerAudioSource;
+    [SerializeField] AudioClip atomBondingSFX;
     private bool isInTrigger;
     private bool canBond;
     public List<GameObject> currAtoms = new List<GameObject>();
@@ -23,6 +25,11 @@ public class PlayerBonding : MonoBehaviour
     public int totalHelium = 0;
     public int totalCarbon = 0;
     public int totalNitrogen = 0;
+
+    void Start()
+    {
+        playerAudioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -90,6 +97,9 @@ public class PlayerBonding : MonoBehaviour
 
             // add collected atom to a list of held atom(s)
             currAtoms.Add(other.gameObject);
+
+            // play pickup audio
+            playerAudioSource.PlayOneShot(atomBondingSFX);
 
             /*
             - zoom out camera when picking up an atom

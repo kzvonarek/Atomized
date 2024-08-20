@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManagement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+
     void Start()
     {
-        
+        AudioSource audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void menuButtonClick(AudioClip buttonSound)
     {
-        
+        audioSource.PlayOneShot(buttonSound);
     }
 }
