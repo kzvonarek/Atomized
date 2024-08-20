@@ -14,7 +14,7 @@ public class AtomSpawner : MonoBehaviour
     [SerializeField] float minSpawnTime = 1f; // min. time between spawns
     [SerializeField] float maxSpawnTime = 2f; // max. time between spawns
     public float totalAtoms = 0; // current total atoms in area
-    private float maxAtoms = 200; // max allowed atoms in area
+    private float maxAtoms = 150; // max allowed atoms in area
     private float randomNumber; // random number to determine which atom to spawn
 
     void Start()

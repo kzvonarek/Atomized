@@ -2539,7 +2539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DANGER
+  m_text: 'Waterbear: DANGER'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afa9daadec9cb4ee39d2b5b235e8cb44, type: 2}
   m_sharedMaterial: {fileID: -5487473072459272775, guid: afa9daadec9cb4ee39d2b5b235e8cb44, type: 2}

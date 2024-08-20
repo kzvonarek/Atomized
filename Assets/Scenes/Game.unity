@@ -1821,7 +1821,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -2.5, z: -7}
+  m_LocalPosition: {x: -2.88, y: -2.5900002, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2027,8 +2027,8 @@ MonoBehaviour:
   carbonPrefab: {fileID: 7327877562473502194, guid: b8d30b43aabf74ef29a5c00b5c020d52, type: 3}
   nitrogenPrefab: {fileID: 6753921146557515202, guid: b8081685404b44a0baf0d84e9adecd14, type: 3}
   oxygenPrefab: {fileID: 1374889870924497624, guid: b1c6e03b3f0cd4866a91b6c230d53cca, type: 3}
-  minSpawnTime: 1
-  maxSpawnTime: 2
+  minSpawnTime: 0.5
+  maxSpawnTime: 1
   totalAtoms: 0
 --- !u!4 &561410016
 Transform:
@@ -4078,7 +4078,7 @@ Transform:
   m_GameObject: {fileID: 1378280804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -2.5, z: -7}
+  m_LocalPosition: {x: -2.88, y: -2.5900002, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6039,11 +6039,11 @@ PrefabInstance:
       objectReference: {fileID: 1378280805}
     - target: {fileID: 6711260933172302752, guid: 06f28bac1b99949acb66081185125d7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -2.88
       objectReference: {fileID: 0}
     - target: {fileID: 6711260933172302752, guid: 06f28bac1b99949acb66081185125d7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 6711260933172302752, guid: 06f28bac1b99949acb66081185125d7e, type: 3}
       propertyPath: m_LocalPosition.z
