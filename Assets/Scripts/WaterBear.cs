@@ -8,6 +8,7 @@ public class WaterBear : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] float bearSpeed; // speed Waterbear moves at
+    [SerializeField] float bearGrowthRate;
     [SerializeField] Transform playerPos; // get position of player
     [SerializeField] GameObject playerObj;
     private PlayerBonding pBscript;
@@ -26,11 +27,11 @@ public class WaterBear : MonoBehaviour
         rb.MovePosition(newPosition);
 
         // rotation that makes Waterbear sprite head always face player
-        // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         // Waterbear scales in size over time
-        this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f) * Time.deltaTime;
+        this.transform.localScale += new Vector3(bearGrowthRate, bearGrowthRate, bearGrowthRate) * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
