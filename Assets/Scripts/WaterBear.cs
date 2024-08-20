@@ -68,26 +68,31 @@ public class WaterBear : MonoBehaviour
                 if (other.gameObject.name == "Hydrogen Atom")
                 {
                     pBscript.totalHydrogen -= 1;
+                    pBscript.bondFunction(-2, -0.3f); // decrease FOV by 2, increase speed by 0.3f
                 }
 
                 if (other.gameObject.name == "Helium Atom")
                 {
                     pBscript.totalHelium -= 1;
+                    pBscript.bondFunction(-1, -0.1f); // decrease FOV by 1, increase speed by 0.1f
                 }
 
                 if (other.gameObject.name == "Carbon Atom")
                 {
                     pBscript.totalCarbon -= 1;
+                    pBscript.bondFunction(-5, -1f); // decrease FOV by 5, increase speed by 1f
                 }
 
                 if (other.gameObject.name == "Nitrogen Atom")
                 {
                     pBscript.totalNitrogen -= 1;
+                    pBscript.bondFunction(-4, -0.7f); // decrease FOV by 4, increase speed by 0.7f
                 }
 
                 if (other.gameObject.name == "Oxygen Atom")
                 {
                     pBscript.totalOxygen -= 1;
+                    pBscript.bondFunction(-3, -0.5f); // decrease FOV by 3, increase speed by 0.5f
                 }
             }
         }

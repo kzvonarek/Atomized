@@ -128,9 +128,9 @@ public class PlayerBonding : MonoBehaviour
         }
     }
 
-    void bondFunction(float fovIncrease, float speedDecrease)
+    public void bondFunction(float fovChange, float speedChange)
     {
-        mainCamera.m_Lens.OrthographicSize += fovIncrease; // increase camera FOV
-        GetComponent<PlayerMovement>().speed -= speedDecrease; // decrease speed
+        mainCamera.m_Lens.OrthographicSize += fovChange; // in/de-crease camera FOV
+        GetComponent<PlayerMovement>().speed -= speedChange; // in/de-crease speed
     }
 }

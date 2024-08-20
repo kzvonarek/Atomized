@@ -81,6 +81,7 @@ public class AtomUse : MonoBehaviour
 
         destroyHeliumAtom();
         pBscript.totalHelium -= 1; // lower helium count
+        pBscript.bondFunction(-1, -0.1f); // decrease FOV by 1, increase speed by 0.1f
     }
 
     void destroyHeliumAtom()
@@ -106,8 +107,7 @@ public class AtomUse : MonoBehaviour
         // increase speed by 5f for 5 seconds
         pMscript.speed += 5f;
         StartCoroutine(fiveSecondTimerO2());
-
-        // need to add speed back, which was lost from inititally holding two oxygen atoms
+        pBscript.bondFunction(-6, -1f); // decrease FOV by 6, increase speed by 1f
     }
 
     IEnumerator fiveSecondTimerO2()
@@ -141,6 +141,7 @@ public class AtomUse : MonoBehaviour
         destroyHydrogenAtom();
         pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
         pBscript.totalHydrogen -= 2; // decrease count of total held hydrogen atoms
+        pBscript.bondFunction(-7, -1.1f); // decrease FOV by 7, increase speed by 1.1f
     }
 
     void destroyHydrogenAtom()
@@ -167,6 +168,7 @@ public class AtomUse : MonoBehaviour
         destroyHydrogenAtom();
         pBscript.totalCarbon -= 1; // decrease count of total held carbon atoms
         pBscript.totalHydrogen -= 4; // decrease count of total held hydrogen atoms
+        pBscript.bondFunction(-13, -2.2f); // decrease FOV by 13, increase speed by 2.2f
     }
 
     void destroyCarbonAtom()
@@ -189,6 +191,7 @@ public class AtomUse : MonoBehaviour
         destroyOxygenAtom();
         pBscript.totalNitrogen -= 2; // decrease count of total held nitrogen atoms
         pBscript.totalOxygen -= 1; // decrease count of total held oxygen atoms
+        pBscript.bondFunction(-11, -1.9f); // decrease FOV by 11, increase speed by 1.9f
 
         // max fuel for 5 seconds
         fuelBarScript.fuelBar.maxValue = 100;
