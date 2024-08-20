@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a136672fba6b9455f8250d59539e311f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bearSpeed: 10
-  bearGrowthRate: 3
+  bearSpeed: 11
+  bearGrowthRate: 4
   playerPos: {fileID: 0}
   playerObj: {fileID: 0}
   rotationSpeed: 20
